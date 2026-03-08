@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Veritas Quant</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.6); --text-faint: rgba(44,48,64,0.3); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--bordeaux); color: var(--bg); }
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(247,244,239,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--rule); }
+  .nav-inner { max-width: 1080px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  .logo { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
+  .logo-wordmark { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 0.8rem; font-weight: 400; color: var(--text-dim); letter-spacing: 0.02em; transition: color 0.25s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); }
+  .nav-contact { color: var(--ink) !important; font-weight: 500; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .h-rule { max-width: 1080px; margin: 0 auto; border: none; border-top: 1px solid var(--rule); }
+  footer { max-width: 1080px; margin: 0 auto; padding: 3rem 2rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
+  .footer-left { display: flex; align-items: center; gap: 0.6rem; }
+  .footer-text { font-size: 0.72rem; color: var(--text-faint); }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.72rem; color: var(--text-faint); text-decoration: none; transition: color 0.25s; }
+  .footer-links a:hover { color: var(--ink); }
+  @keyframes softIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .page-hero { padding: 10rem 2rem 4rem; max-width: 1080px; margin: 0 auto; }
+  .page-hero h1 { font-family: 'EB Garamond', serif; font-size: 3rem; font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
+  .page-hero p { font-size: 1rem; font-weight: 300; color: var(--text-dim); line-height: 1.9; max-width: 560px; animation: softIn 0.8s ease-out 0.25s both; }
+  .page-hero p strong { color: var(--ink); font-weight: 500; }
+
+  .mode-section { max-width: 1080px; margin: 0 auto; padding: 5rem 2rem 3rem; }
+  .mode-header { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; margin-bottom: 2.5rem; }
+  .mode-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bordeaux); }
+  .mode-name { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-top: 0.4rem; }
+  .mode-desc { font-size: 0.9rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; }
+  .engagements { display: flex; flex-direction: column; }
+  .engagement { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; padding: 2.5rem 0; border-bottom: 1px solid var(--rule); }
+  .engagement:last-child { border-bottom: none; }
+  .eng-name { font-family: 'EB Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--ink); }
+  .eng-scope { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.35rem; }
+  .eng-includes { margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--text-faint); letter-spacing: 0.02em; line-height: 2; }
+  .eng-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); }
+
+  .process-section { max-width: 1080px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; }
+  h2 { font-family: 'EB Garamond', serif; font-size: 2.5rem; font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 520px; }
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .step-num { font-family: 'EB Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--text-ghost); margin-bottom: 0.75rem; }
+  .step-title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .step-text { font-size: 0.78rem; font-weight: 300; color: var(--text-dim); line-height: 1.8; }
+
+  .bottom-contact { max-width: 1080px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+  .bottom-contact p { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; max-width: 460px; margin: 0 auto 2rem; }
+  .bottom-email { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
+  .bottom-email:hover { border-color: var(--ink); }
+
+  @media (max-width: 860px) {
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem; }
+    .mode-header { grid-template-columns: 1fr; gap: 1rem; }
+    .engagement { grid-template-columns: 1fr; gap: 1rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html">Approach</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li></ul></div></nav>
+
+<div class="page-hero">
+  <h1>Two modes, three depths</h1>
+  <p>We offer two engagement modes. <strong>Performance audit</strong> operates on your historical trade record alone. <strong>Full audit</strong> adds a review of your signal logic and source code, verifying implementation integrity alongside statistical validity.</p>
+</div>
+<hr class="h-rule">
+
+<div class="mode-section">
+  <div class="mode-header"><div><div class="mode-label">Mode A</div><div class="mode-name">Performance Audit</div></div><div class="mode-desc">You provide a trade history — entry/exit timestamps, instrument, direction, and prices. We validate the statistical properties of your results through our proprietary framework. No code required.</div></div>
+  <div class="engagements">
+    <div class="engagement"><div><div class="eng-name">Diagnostic</div><div class="eng-scope">Statistical screen · 5–7 business days</div><div class="eng-includes">Significance testing · Cost stress · Sample sufficiency · Walk-forward · Confound detection · Structured report</div></div><div class="eng-desc">Core statistical validation applied to your trade record. Tests for significance, cost survival, sample sufficiency, out-of-sample persistence, and directional confounds. Delivers a structured report with binary verdicts per test layer and interpretive commentary.</div></div>
+    <div class="engagement"><div><div class="eng-name">Full Validation</div><div class="eng-scope">Complete framework · 10–15 business days</div><div class="eng-includes">All diagnostic layers · Market microstructure · Regime analysis · Decay diagnostics · DD report · Research debrief</div></div><div class="eng-desc">The complete proprietary validation framework. Includes real market microstructure analysis, regime robustness across multiple environments, decay diagnostics, and an institutional-grade due diligence report suitable for capital allocation decisions. Includes a debrief with the research team.</div></div>
+  </div>
+</div>
+<hr class="h-rule">
+
+<div class="mode-section">
+  <div class="mode-header"><div><div class="mode-label">Mode B</div><div class="mode-name">Full Audit</div></div><div class="mode-desc">You provide your trade history and signal source code (or detailed pseudocode). In addition to statistical validation, we review the implementation for look-ahead bias, signal construction errors, and data handling issues that silently inflate backtest performance.</div></div>
+  <div class="engagements">
+    <div class="engagement"><div><div class="eng-name">Full Validation + Code Review</div><div class="eng-scope">Framework + implementation audit · 2–3 weeks</div><div class="eng-includes">All full validation layers · Code review · Signal reconstruction · Look-ahead detection · Cost verification</div></div><div class="eng-desc">Everything in the performance audit full validation, plus line-by-line review of signal logic. We reconstruct the signal independently to verify reproducibility, test for look-ahead contamination, and validate cost assumptions against real market data.</div></div>
+    <div class="engagement"><div><div class="eng-name">Multi-Strategy Audit</div><div class="eng-scope">Full book · 3–5 strategies · 4–6 weeks</div><div class="eng-includes">Full validation + code on each strategy · Cross-strategy correlation · Portfolio risk · Sizing recommendations · Investor DD document</div></div><div class="eng-desc">Full validation and code review applied across an entire strategy book. Cross-strategy correlation analysis, portfolio-level risk decomposition, and sizing recommendations. Produces an investor-facing due diligence document for funds preparing to allocate or raise capital.</div></div>
+  </div>
+</div>
+<hr class="h-rule">
+
+<div class="process-section">
+  <div class="section-num">How it works</div>
+  <h2>From submission to verdict</h2>
+  <div class="process-steps">
+    <div><div class="step-num">1</div><div class="step-title">Submit</div><div class="step-text">Describe your strategy and send your trade history. We assess scope and data feasibility.</div></div>
+    <div><div class="step-num">2</div><div class="step-title">Proposal</div><div class="step-text">Within 48 hours, you receive a fixed-price proposal with the recommended engagement mode and timeline.</div></div>
+    <div><div class="step-num">3</div><div class="step-title">Validation</div><div class="step-text">We run your strategy through the proprietary framework. Every layer produces a binary verdict backed by evidence.</div></div>
+    <div><div class="step-num">4</div><div class="step-title">Report</div><div class="step-text">You receive a structured report with verdicts, risk diagnostics, and — for full engagements — a live debrief.</div></div>
+  </div>
+</div>
+
+<hr class="h-rule">
+<div class="bottom-contact">
+  <p>Describe your strategy and the scope of validation you require. We return a proposal within 48 hours.</p>
+  <a href="mailto:contact@veritasquant.com" class="bottom-email">contact@veritasquant.com</a>
+</div>
+
+<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
+</body>
+</html>
