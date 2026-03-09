@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Approach — Veritas Quant</title>
-<link rel="alternate" hreflang="en" href="approach.html">
-<link rel="alternate" hreflang="fr" href="approach-fr.html">
+<title>Research — Veritas Quant</title>
+<link rel="alternate" hreflang="en" href="research.html">
+<link rel="alternate" hreflang="fr" href="research-fr.html">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); --pass: #1b7340; --pass-bg: #e8f5e9; --kill: #c42838; --kill-bg: #fdecea; }
+  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); --pass: #1b7340; --pass-bg: #e8f5e9; --kill: #c42838; --kill-bg: #fdecea; --flag-bg: #fff8e1; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
@@ -37,8 +37,8 @@
   .h-rule { max-width: 1320px; margin: 0 auto; border: none; border-top: 1px solid var(--rule); }
   .section { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1.5rem, 3vw, 4rem) 2rem; }
   .section-num { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; }
-  h2 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 520px; }
-  .section-lead { font-size: 0.95rem; font-weight: 300; color: var(--text-dim); line-height: 1.9; max-width: 520px; margin-top: 1.5rem; }
+  h2 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 620px; }
+  .section-lead { font-size: 0.95rem; font-weight: 300; color: var(--text-dim); line-height: 1.9; max-width: 620px; margin-top: 1.5rem; }
   footer { padding: 1.25rem clamp(1.5rem, 3vw, 4rem); border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
   .footer-left { display: flex; align-items: center; gap: 0.6rem; }
   .footer-text { font-size: 0.72rem; color: var(--text-faint); }
@@ -53,65 +53,16 @@
   .page-hero h1 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
   .page-hero p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.9; max-width: 560px; animation: softIn 0.8s ease-out 0.25s both; }
 
-  .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
-  .approach-item { padding-bottom: 2.5rem; }
-  .approach-icon { display: block; margin-bottom: 1rem; color: var(--bordeaux); }
-  .approach-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.25rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
-  .approach-text { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); }
+  /* ─── HARNESS ─── */
+  .harness-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+  .harness-card { border: 1px solid var(--rule); padding: 1.75rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .harness-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
+  .harness-id { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.72rem; font-weight: 400; color: var(--pass); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .harness-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.6rem; }
+  .harness-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--text-dim); }
+  .harness-layers { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-faint); margin-top: 0.75rem; }
 
-  .two-gates { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem) 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-  .gate { padding: 2.5rem; border: 1px solid var(--ink); }
-  .gate-label { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1rem; }
-  .gate h3 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.4rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
-  .gate p { font-size: 0.85rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; }
-  .gate-stat { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .gate-stat-item { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 1.5rem 1rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .gate-stat-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
-  .gate-stat-value { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--ink); line-height: 1.1; }
-  .gate-stat-label { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.5rem; line-height: 1.6; }
-
-  .deliverable-block { background: var(--ink); padding: 4rem; }
-  .deliverable-block h3 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.7rem; font-weight: 400; color: var(--bg); margin-bottom: 0.75rem; }
-  .deliverable-block > p { font-size: 0.9rem; font-weight: 300; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 560px; margin-bottom: 3rem; }
-  .deliverable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-  .deliv-num { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 400; color: rgba(247,244,239,0.3); letter-spacing: 0.05em; margin-bottom: 0.5rem; }
-  .deliv-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.1rem; font-weight: 500; color: var(--bg); margin-bottom: 0.5rem; }
-  .deliv-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: rgba(247,244,239,0.5); }
-
-  .bottom-contact { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1.5rem, 3vw, 4rem); text-align: center; }
-  .bottom-contact p { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; max-width: 460px; margin: 0 auto 2rem; }
-  .bottom-email { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
-  .bottom-email:hover { border-color: var(--ink); }
-  .bottom-actions { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
-  .bottom-or { font-size: 0.78rem; color: var(--text-faint); letter-spacing: 0.05em; }
-  .bottom-cta { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
-  .bottom-cta:hover { border-color: var(--ink); }
-
-  .subtle-link { display: inline-block; margin-top: 1.5rem; font-size: 0.78rem; font-weight: 400; color: var(--text-faint); text-decoration: none; transition: color 0.25s; }
-  .subtle-link:hover { color: var(--ink); }
-  .subtle-link::after { content: ' →'; }
-  *:focus-visible { outline: 2px solid var(--bordeaux); outline-offset: 2px; }
-  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-  .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 4px 0; transition: 0.3s; }
-  .nav-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 2rem clamp(1.5rem, 3vw, 4rem); flex-direction: column; gap: 1.5rem; border-top: 1px solid var(--rule); }
-  .nav-mobile a { text-decoration: none; font-size: 1rem; color: var(--text-dim); transition: color 0.25s; }
-  .nav-mobile a:hover { color: var(--ink); }
-  .nav-mobile a.active { color: var(--ink); font-weight: 500; }
-  .nav-mobile .lang-switch { display: flex; align-items: center; gap: 0.3rem; margin-top: 1rem; }
-  .nav-mobile .lang-switch a { font-size: 0.8rem; color: var(--text-faint); }
-  .nav-mobile .lang-switch a.lang-active { color: var(--ink); font-weight: 500; }
-  .nav-mobile .lang-sep { font-size: 0.75rem; color: var(--text-faint); }
-  body.nav-open .nav-mobile { display: flex; }
-  body.nav-open { overflow: hidden; }
-
-
-
-  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-  .stat-item { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 1.5rem 1.25rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .stat-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
-  .stat-value { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--ink); }
-  .stat-label { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.5rem; line-height: 1.6; }
-
+  /* ─── CASE STUDIES ─── */
   .case-study { margin-top: 3rem; padding: 2.5rem; border: 1px solid var(--rule); }
   .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
   .case-meta { display: flex; flex-direction: column; gap: 0.25rem; }
@@ -139,18 +90,42 @@
   .case-finding { margin-top: 1.25rem; padding: 1.25rem; border-left: 3px solid var(--bordeaux); background: var(--bg-warm); }
   .case-finding p { font-size: 0.85rem; font-weight: 400; color: var(--ink); line-height: 1.8; margin: 0; }
 
+  /* ─── STATS BAR ─── */
+  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .stat-item { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 1.5rem 1.25rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .stat-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
+  .stat-value { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--ink); }
+  .stat-label { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.5rem; line-height: 1.6; }
+
+  .bottom-contact { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1.5rem, 3vw, 4rem); text-align: center; }
+  .bottom-contact p { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; max-width: 460px; margin: 0 auto 2rem; }
+  .bottom-actions { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
+  .bottom-email { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
+  .bottom-email:hover { border-color: var(--ink); }
+  .bottom-or { font-size: 0.78rem; color: var(--text-faint); letter-spacing: 0.05em; }
+  .bottom-cta { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
+  .bottom-cta:hover { border-color: var(--ink); }
+
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 4px 0; transition: 0.3s; }
+  .nav-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 2rem clamp(1.5rem, 3vw, 4rem); flex-direction: column; gap: 1.5rem; border-top: 1px solid var(--rule); }
+  .nav-mobile a { text-decoration: none; font-size: 1rem; color: var(--text-dim); transition: color 0.25s; }
+  .nav-mobile a:hover { color: var(--ink); }
+  .nav-mobile a.active { color: var(--ink); font-weight: 500; }
+  .nav-mobile .lang-switch { display: flex; align-items: center; gap: 0.3rem; margin-top: 1rem; }
+  .nav-mobile .lang-switch a { font-size: 0.8rem; color: var(--text-faint); }
+  .nav-mobile .lang-switch a.lang-active { color: var(--ink); font-weight: 500; }
+  body.nav-open .nav-mobile { display: flex; }
+  body.nav-open { overflow: hidden; }
+
   @media (max-width: 860px) {
     h1 { font-size: 2.5rem !important; }
     h2 { font-size: 2rem; }
-    .approach-grid { grid-template-columns: 1fr; }
-    .two-gates { grid-template-columns: 1fr; }
-    .deliverable-grid { grid-template-columns: 1fr; }
-    .deliverable-block { padding: 2.5rem; }
+    .harness-grid { grid-template-columns: 1fr; }
     .stats-bar { grid-template-columns: 1fr 1fr; }
-    .case-study { padding: 1.5rem; overflow-x: auto; }
+    .gate-mini { font-size: 0.75rem; }
     .case-header { flex-direction: column; gap: 1rem; }
     .bottom-actions { flex-direction: column; gap: 0.75rem; }
-    .bottom-email, .bottom-cta { font-size: 1.2rem; }
     .nav-links { display: none; }
     .nav-toggle { display: flex; flex-direction: column; }
   }
@@ -158,54 +133,28 @@
 </head>
 <body>
 
-<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html" class="active">Approach</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li><li class="lang-switch"><a href="approach.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="approach-fr.html">FR</a></li></ul>
+<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html">Approach</a></li><li><a href="services.html">Services</a></li><li><a href="research.html" class="active">Research</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li><li class="lang-switch"><a href="research.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="research-fr.html">FR</a></li></ul>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile">
   <a href="index.html">Home</a>
-  <a href="approach.html" class="active">Approach</a>
+  <a href="approach.html">Approach</a>
   <a href="services.html">Services</a>
+  <a href="research.html" class="active">Research</a>
   <a href="team.html">Team</a>
   <a href="contact.html">Contact</a>
-  <div class="lang-switch"><a href="approach.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="approach-fr.html">FR</a></div>
+  <div class="lang-switch"><a href="research.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="research-fr.html">FR</a></div>
 </div>
 
 <div class="page-hero">
-  <h1>We look for reasons to<br>reject your strategy</h1>
-  <p>Most validation confirms what traders already believe. Ours does the opposite. Our proprietary framework applies a sequence of statistical tests designed to identify the failure modes that standard backtesting misses.</p>
+  <h1>We test the tests</h1>
+  <p>Our framework is validated by a synthetic test harness with known-property signals. Below: how we verify our own methodology, and anonymized case studies from our internal research showing why strategies fail.</p>
 </div>
 <hr class="h-rule">
 
+<!-- ═══ STATS ═══ -->
 <div class="section">
-  <div class="section-num">What we test for</div>
-  <div class="approach-grid">
-    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><div class="approach-title">Beta confound detection</div><div class="approach-text">We test whether your signal captures genuine timing alpha or simply benefits from directional exposure to a trending asset. This single class of test has eliminated strategies with Sharpe ratios above 1.5 in our internal research.</div></div>
-    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 C6 20 8 4 12 4 C16 4 18 20 22 20"/><line x1="2" y1="20" x2="22" y2="20"/></svg><div class="approach-title">Proper statistical inference</div><div class="approach-text">Financial returns are autocorrelated. Standard significance tests produce misleading results. We use advanced bootstrap methods that preserve the dependence structure of your data, producing reliable p-values where naive methods fail.</div></div>
-    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><path d="M5 12 L12 6 L19 12 L12 18 Z"/></svg><div class="approach-title">Realistic cost modeling</div><div class="approach-text">Strategies are stress-tested at multiples of estimated transaction costs — including spread, commission, and market impact. Edges that vanish under conservative cost assumptions are identified and flagged before they consume capital.</div></div>
-    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L4 9 V15 C4 18 8 21 12 22 C16 21 20 18 20 15 V9 Z"/></svg><div class="approach-title">Regime robustness</div><div class="approach-text">We require strategies to demonstrate persistence across distinct market environments — including crisis periods and low-volatility regimes. A signal that works only in favorable conditions is not a signal.</div></div>
-  </div>
-</div>
-<hr class="h-rule">
-
-<div class="two-gates">
-  <div class="gate">
-    <div class="gate-label">Gate 1</div>
-    <h3>Statistical Screen</h3>
-    <p>A fast, rigorous screen designed to kill quickly. Multiple layers of statistical testing assess whether the core signal has any validity before deeper resources are committed.</p>
-    <div class="gate-stat"><div class="gate-stat-item"><div class="gate-stat-value">8</div><div class="gate-stat-label">Test layers</div></div><div class="gate-stat-item"><div class="gate-stat-value">~99%</div><div class="gate-stat-label">Kill rate at this gate</div></div></div>
-  </div>
-  <div class="gate">
-    <div class="gate-label">Gate 2</div>
-    <h3>Deep Validation</h3>
-    <p>For survivors only. Real market microstructure data, bid-ask analysis, regime robustness across multiple environments, decay diagnostics, and portfolio-level correlation testing.</p>
-    <div class="gate-stat"><div class="gate-stat-item"><div class="gate-stat-value">41</div><div class="gate-stat-label">Additional layers</div></div><div class="gate-stat-item"><div class="gate-stat-value">~50%</div><div class="gate-stat-label">Kill rate of Gate 1 survivors</div></div></div>
-  </div>
-</div>
-<hr class="h-rule">
-
-<!-- ═══ STATS BAR ═══ -->
-<div class="section" style="padding-top: 1.5rem; padding-bottom: 0.5rem;">
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-value">10</div><div class="stat-label">Synthetic test cases<br>covering all 8 layers</div></div>
     <div class="stat-item"><div class="stat-value">100%</div><div class="stat-label">Detection rate on<br>planted confounds</div></div>
@@ -215,21 +164,135 @@
 </div>
 <hr class="h-rule">
 
+<!-- ═══ SYNTHETIC HARNESS ═══ -->
 <div class="section">
-  <div class="section-num">The deliverable</div>
-  <h2>A verdict, not an opinion</h2>
-  <p class="section-lead">Every engagement produces a structured validation report. Binary pass/fail on each test layer, supported by quantitative evidence.</p>
-  <div class="deliverable-block" style="margin-top: 3rem;">
-    <h3>What you receive</h3>
-    <p>A comprehensive document designed to serve as an independent due diligence artifact — for your own capital allocation decisions, or to present to investors and allocators.</p>
-    <div class="deliverable-grid">
-      <div><div class="deliv-num">01</div><div class="deliv-title">Validation summary</div><div class="deliv-desc">A single-page executive summary with an overall verdict — advance, reject, or conditional — supported by the key metrics that determined the outcome.</div></div>
-      <div><div class="deliv-num">02</div><div class="deliv-title">Layer-by-layer results</div><div class="deliv-desc">Every validation layer reports a binary pass/fail with the underlying test statistic, confidence level, and a plain-language interpretation.</div></div>
-      <div><div class="deliv-num">03</div><div class="deliv-title">Risk diagnostics</div><div class="deliv-desc">Drawdown profile, regime sensitivity, cost sensitivity, and correlation to common risk factors. A complete picture of where and how the strategy could fail.</div></div>
-      <div><div class="deliv-num">04</div><div class="deliv-title">Debrief</div><div class="deliv-desc">For full validation and multi-strategy engagements, a live session with the research team to walk through findings and discuss deployment implications.</div></div>
+  <div class="section-num">Framework validation</div>
+  <h2>Synthetic test harness</h2>
+  <p class="section-lead">Every validation layer is tested against synthetic signals with known properties. Planted edges must be detected. Known noise must be rejected. Known confounds must be caught. If any test fails, the framework is not deployed.</p>
+
+  <div class="harness-grid">
+    <div class="harness-card">
+      <div class="harness-id">T01 · Positive control</div>
+      <div class="harness-title">Known edge detection</div>
+      <div class="harness-desc">A synthetic +30 bps signal injected into noise. The framework must pass it through all 8 layers. Verifies that the framework does not over-kill genuine edges.</div>
+      <div class="harness-layers">Covers: L1–L8 (all layers)</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T02 · Negative control</div>
+      <div class="harness-title">Pure noise rejection</div>
+      <div class="harness-desc">Zero-alpha random entries on a driftless asset. The framework must kill at L1/L2. Verifies that the statistical tests do not produce false positives on noise.</div>
+      <div class="harness-layers">Covers: L1, L2</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T03 · Beta confound</div>
+      <div class="harness-title">Directional exposure trap</div>
+      <div class="harness-desc">Random long entries on an uptrending asset. Produces positive mean returns and a plausible Sharpe — but zero timing alpha. The L8 regime-conditional shuffle must catch this.</div>
+      <div class="harness-layers">Covers: L8 (timing shuffle)</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T04 · Direction-aware</div>
+      <div class="harness-title">Short-side confound fix</div>
+      <div class="harness-desc">Random short entries on an uptrending asset. An earlier framework version produced spuriously low L8 p-values for short signals. This test verifies the direction-aware fix.</div>
+      <div class="harness-layers">Covers: L8 (direction fix)</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T05 · Autocorrelation</div>
+      <div class="harness-title">Politis-White bandwidth adaptation</div>
+      <div class="harness-desc">Signals with known AR(1) structure at varying persistence levels. Verifies that the Politis-White block length estimator scales correctly, preventing naive bootstrap from underestimating standard errors.</div>
+      <div class="harness-layers">Covers: PW estimator, L1, L2</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T06 · Long memory</div>
+      <div class="harness-title">Genuine edge with serial dependence</div>
+      <div class="harness-desc">A real +30 bps edge embedded in a long-memory process (AR(0.7)). Verifies that the framework still passes genuine edges when the Politis-White estimator increases block lengths — the correction must not over-kill.</div>
+      <div class="harness-layers">Covers: PW estimator, L1–L8</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T07 · Cost absorption</div>
+      <div class="harness-title">Transaction cost kill</div>
+      <div class="harness-desc">A marginal +5 bps edge with 8 bps round-trip costs. Net return is negative. The framework must kill at L4 cost absorption. Verifies that edges which cannot survive realistic costs are eliminated.</div>
+      <div class="harness-layers">Covers: L4</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T08 · Low Sharpe</div>
+      <div class="harness-title">Volatility-drowned alpha</div>
+      <div class="harness-desc">A positive +15 bps edge with extreme volatility (500 bps), producing an annualized Sharpe of ~0.27. The framework must kill at L3 Sharpe floor. A real edge that cannot be sized is not tradeable.</div>
+      <div class="harness-layers">Covers: L3</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T09 · Walk-forward decay</div>
+      <div class="harness-title">Historical edge, dead today</div>
+      <div class="harness-desc">+40 bps in the first 25% of data, −5 bps in the last 75%. Simulates an edge that existed historically but has been arbitraged away. The framework must catch the decay at L5.</div>
+      <div class="harness-layers">Covers: L5</div>
+    </div>
+    <div class="harness-card">
+      <div class="harness-id">T10 · Bonferroni</div>
+      <div class="harness-title">Multiple testing correction</div>
+      <div class="harness-desc">Two marginal signals tested in the same batch. Individually borderline, but under Holm-Bonferroni batch correction the weaker must be killed. Verifies that multiple testing is enforced.</div>
+      <div class="harness-layers">Covers: L6</div>
     </div>
   </div>
-  <a href="services.html" class="subtle-link">View engagement options</a>
+</div>
+<hr class="h-rule">
+
+<!-- ═══ FALSE POSITIVE CALIBRATION ═══ -->
+<div class="section">
+  <div class="section-num">False positive calibration</div>
+  <h2>What if every hypothesis were noise?</h2>
+  <p class="section-lead">We simulated 1,576 pure-noise strategies — zero alpha, random entries, realistic volatility — through the framework's eight Gate 1 layers, 10,000 times. The question: how many would survive by chance alone?</p>
+
+  <div style="margin-top: 2.5rem; padding: 2.5rem; border: 1px solid var(--ink);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; text-align: center; margin-bottom: 2rem;">
+      <div>
+        <div style="font-family: 'EB Garamond', serif; font-size: 2.4rem; color: var(--ink);">0.17</div>
+        <div style="font-size: 0.72rem; color: var(--text-dim); margin-top: 0.3rem;">Expected false positives<br>per 1,576 null hypotheses</div>
+      </div>
+      <div>
+        <div style="font-family: 'EB Garamond', serif; font-size: 2.4rem; color: var(--ink);">84.3%</div>
+        <div style="font-size: 0.72rem; color: var(--text-dim); margin-top: 0.3rem;">Probability of zero<br>false positives</div>
+      </div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 2rem; color: var(--kill);">10<sup style="font-size:0.55em">−11</sup></div>
+        <div style="font-size: 0.72rem; color: var(--text-dim); margin-top: 0.3rem;">P(≥ 8 false positives)<br>under the null</div>
+      </div>
+    </div>
+
+    <div style="font-size: 0.82rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); max-width: 640px;">
+      <p>The simulation models the joint probability of passing L1 (permutation shuffle), L3 (Sharpe floor), L4 (cost absorption), L5 (walk-forward), L6 (Bonferroni correction), L7 (N floor), and L8 (timing shuffle) simultaneously — respecting the dependence between layers driven by the same sample statistics.</p>
+      <p style="margin-top: 1rem;">Distribution across 10,000 simulations:</p>
+    </div>
+
+    <div style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); line-height: 2;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="width: 4rem; text-align: right;">0 FP</span>
+        <div style="background: var(--pass); height: 14px; border-radius: 1px; width: min(84.3%, 500px); opacity: 0.8;"></div>
+        <span>84.3%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="width: 4rem; text-align: right;">1 FP</span>
+        <div style="background: var(--pass); height: 14px; border-radius: 1px; width: min(14.5%, 500px); opacity: 0.6;"></div>
+        <span>14.5%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="width: 4rem; text-align: right;">2 FP</span>
+        <div style="background: var(--gris); height: 14px; border-radius: 1px; width: min(1.2%, 500px); min-width: 4px; opacity: 0.5;"></div>
+        <span>1.2%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="width: 4rem; text-align: right;">≥ 3 FP</span>
+        <div style="background: var(--kill); height: 14px; border-radius: 1px; width: 2px;"></div>
+        <span>< 0.1%</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="width: 4rem; text-align: right; font-weight: 700; color: var(--kill);">≥ 8 FP</span>
+        <span style="font-weight: 700; color: var(--kill);">never observed in 10,000 simulations</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 1.5rem; padding: 1.25rem; border-left: 3px solid var(--pass); background: var(--pass-bg);">
+      <p style="font-size: 0.85rem; font-weight: 400; color: var(--pass); line-height: 1.8; margin: 0;"><strong>Conclusion:</strong> The framework's 8 survivors from 1,576 hypotheses are not explained by chance. Under the null, ≥ 8 false positives has probability below 10⁻¹¹.</p>
+    </div>
+  </div>
 </div>
 <hr class="h-rule">
 
@@ -340,8 +403,8 @@
     </div>
   </div>
 </div>
-
 <hr class="h-rule">
+
 <div class="bottom-contact">
   <p>Submit your strategy for independent validation. We return a proposal within 48 hours.</p>
   <div class="bottom-actions">
@@ -351,7 +414,7 @@
   </div>
 </div>
 
-<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
+<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">&copy; 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
 <script>
 document.querySelector('.nav-toggle').addEventListener('click', function() {
   document.body.classList.toggle('nav-open');
