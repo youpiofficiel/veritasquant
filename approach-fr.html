@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="fr" href="approach-fr.html">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
+  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); --pass: #1b7340; --pass-bg: #e8f5e9; --kill: #c42838; --kill-bg: #fdecea; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
@@ -104,6 +104,39 @@
 
 
 
+  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .stat-item { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 1.5rem 1.25rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .stat-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
+  .stat-value { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--ink); }
+  .stat-label { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.5rem; line-height: 1.6; }
+
+  .case-study { margin-top: 3rem; padding: 2.5rem; border: 1px solid var(--rule); }
+  .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
+  .case-meta { display: flex; flex-direction: column; gap: 0.25rem; }
+  .case-id { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-faint); }
+  .case-name { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.4rem; font-weight: 500; color: var(--ink); }
+  .case-asset { font-size: 0.82rem; color: var(--text-dim); font-weight: 300; }
+  .verdict-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 2px; }
+  .verdict-kill { background: var(--kill-bg); color: var(--kill); border-top: 2px solid var(--kill); }
+  .verdict-pass { background: var(--pass-bg); color: var(--pass); border-top: 2px solid var(--pass); }
+
+  .gate-mini { margin: 1.5rem 0; width: 100%; border-collapse: collapse; }
+  .gate-mini th { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-align: left; padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--ink); }
+  .gate-mini th:nth-child(3), .gate-mini th:nth-child(4) { text-align: right; }
+  .gate-mini td { font-size: 0.82rem; font-weight: 300; color: var(--text-dim); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--rule); }
+  .gate-mini td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--text); }
+  .gate-mini td:nth-child(3), .gate-mini td:nth-child(4) { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-align: right; }
+  .gate-mini .v-pass { color: var(--pass); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-align: center; }
+  .gate-mini .v-kill { color: var(--kill); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-align: center; }
+  .gate-mini tr:nth-child(even) td { background: rgba(44,48,64,0.02); }
+  .gate-mini tr.kill-row td { background: var(--kill-bg); }
+
+  .case-analysis { margin-top: 1.5rem; }
+  .case-analysis h4 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .case-analysis p { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); margin-bottom: 1rem; }
+  .case-finding { margin-top: 1.25rem; padding: 1.25rem; border-left: 3px solid var(--bordeaux); background: var(--bg-warm); }
+  .case-finding p { font-size: 0.85rem; font-weight: 400; color: var(--ink); line-height: 1.8; margin: 0; }
+
   @media (max-width: 860px) {
     h1 { font-size: 2.5rem !important; }
     h2 { font-size: 2rem; }
@@ -111,6 +144,8 @@
     .two-gates { grid-template-columns: 1fr; }
     .deliverable-grid { grid-template-columns: 1fr; }
     .deliverable-block { padding: 2.5rem; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .case-header { flex-direction: column; gap: 1rem; }
     .bottom-actions { flex-direction: column; gap: 0.75rem; }
     .bottom-email, .bottom-cta { font-size: 1.2rem; }
     .nav-links { display: none; }
@@ -166,6 +201,17 @@
 </div>
 <hr class="h-rule">
 
+<!-- ═══ STATS BAR ═══ -->
+<div class="section">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-value">10</div><div class="stat-label">Cas de test synthétiques<br>couvrant les 8 couches</div></div>
+    <div class="stat-item"><div class="stat-value">100 %</div><div class="stat-label">Taux de détection sur<br>les biais implantés</div></div>
+    <div class="stat-item"><div class="stat-value">0,17</div><div class="stat-label">Faux positifs attendus<br>pour 1 576 stratégies nulles</div></div>
+    <div class="stat-item"><div class="stat-value">10<sup style="font-size:0.5em">−11</sup></div><div class="stat-label">P(≥ 8 survivantes)<br>sous l'hypothèse nulle</div></div>
+  </div>
+</div>
+<hr class="h-rule">
+
 <div class="section">
   <div class="section-num">Le livrable</div>
   <h2>Un verdict, pas une opinion</h2>
@@ -181,6 +227,115 @@
     </div>
   </div>
   <a href="services-fr.html" class="subtle-link">Voir les options d'engagement</a>
+</div>
+<hr class="h-rule">
+
+<!-- ═══ ÉTUDES DE CAS ═══ -->
+<div class="section">
+  <div class="section-num">Extrait du journal d'élimination</div>
+  <h2>Pourquoi les stratégies échouent</h2>
+  <p class="section-lead">Études de cas anonymisées issues de notre recherche interne. Chacune illustre un mode de défaillance différent que le cadre est conçu pour détecter — et que le backtesting standard manque.</p>
+
+  <!-- CAS 1 : Confusion bêta -->
+  <div class="case-study">
+    <div class="case-header">
+      <div class="case-meta">
+        <div class="case-id">Étude de cas 01 · Domaine A · Actions</div>
+        <div class="case-name">Flux de rééquilibrage de fin de mois</div>
+        <div class="case-asset">Actions & obligations US · Résolution journalière · 2005–2026</div>
+      </div>
+      <div class="verdict-badge verdict-kill">KILLED — L8</div>
+    </div>
+
+    <table class="gate-mini">
+      <tr><th>Couche</th><th>Test</th><th>Statistique</th><th>Verdict</th></tr>
+      <tr><td>L1</td><td>Permutation directionnelle</td><td>p = 0,048</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L2</td><td>IC Bootstrap</td><td>IC exclut 0</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L3</td><td>Plancher de Sharpe</td><td>0,52</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L4</td><td>Absorption des coûts</td><td>+18,4 bps net</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L5</td><td>Walk-forward</td><td>3/5 positifs</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L6</td><td>Bonferroni</td><td>p = 0,048</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L7</td><td>Plancher N</td><td>N = 174</td><td class="v-pass">PASS</td></tr>
+      <tr class="kill-row"><td>L8</td><td>Alpha de timing — conditionnel au régime</td><td>p = 0,991</td><td class="v-kill">KILL</td></tr>
+    </table>
+
+    <div class="case-analysis">
+      <h4>Hypothèse</h4>
+      <p>Le rééquilibrage de fin de mois par les fonds indiciels et les gérants de pension crée un flux prévisible dans les paires actions/obligations. Le signal capture la fenêtre de rééquilibrage et joue contre la direction de flux attendue.</p>
+      <h4>Ce que le backtest standard montrait</h4>
+      <p>Un rendement moyen positif de +23,6 bps par trade, un Sharpe de 0,52 et une permutation directionnelle statistiquement significative (p = 0,048). Six des sept premières couches passaient. Selon tout standard de backtest conventionnel, cela ressemblait à une stratégie viable.</p>
+      <h4>Ce que L8 a révélé</h4>
+      <p>La permutation de timing L8 compare les entrées de la stratégie à des entrées aléatoires conditionnelles au régime sur le même actif. Le résultat : p = 0,991 — signifiant que des entrées aléatoires à la même fréquence produisaient de <em>meilleurs</em> rendements que le signal. L'avantage apparent s'expliquait entièrement par l'exposition directionnelle à l'actif sous-jacent, pas par le mécanisme de rééquilibrage. Le signal était une manière coûteuse d'être long dans une tendance haussière.</p>
+      <div class="case-finding">
+        <p><strong>Conclusion de recherche :</strong> Le flux de rééquilibrage de fin de mois est de la continuation, pas de la réversion. Le signal était un anti-signal — jouant contre un flux informationnellement correct. Cela a fermé la frontière de rééquilibrage à fréquence journalière sur toutes les paires d'actifs testées.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAS 2 : Mécanisme confirmé, éliminé par N -->
+  <div class="case-study">
+    <div class="case-header">
+      <div class="case-meta">
+        <div class="case-id">Étude de cas 02 · Domaine B · FX</div>
+        <div class="case-name">Réversion de surréaction aux annonces macro</div>
+        <div class="case-asset">Paire FX majeure · Résolution 1 minute · 2014–2026</div>
+      </div>
+      <div class="verdict-badge verdict-kill">KILLED — L7</div>
+    </div>
+
+    <table class="gate-mini">
+      <tr><th>Couche</th><th>Test</th><th>Statistique</th><th>Verdict</th></tr>
+      <tr><td>L1</td><td>Permutation directionnelle</td><td>p = 0,001</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L2</td><td>IC Bootstrap</td><td>IC exclut 0</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L3</td><td>Plancher de Sharpe</td><td>0,71</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L4</td><td>Absorption des coûts</td><td>+9,2 bps net</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L5</td><td>Walk-forward</td><td>4/5 positifs</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L6</td><td>Bonferroni</td><td>p = 0,009</td><td class="v-pass">PASS</td></tr>
+      <tr class="kill-row"><td>L7</td><td>Plancher N (Domaine B = 300)</td><td>N = 170</td><td class="v-kill">KILL</td></tr>
+      <tr><td>L8</td><td>Alpha de timing</td><td>p = 0,0005</td><td class="v-pass">PASS</td></tr>
+    </table>
+
+    <div class="case-analysis">
+      <h4>Hypothèse</h4>
+      <p>La réaction algorithmique aux publications macroéconomiques majeures crée une surréaction temporaire dans les 30 premières secondes. Le flux des investisseurs institutionnels normalise le prix sur les 5 à 35 minutes suivantes. Le signal capture cette réversion.</p>
+      <h4>Pourquoi c'est l'élimination la plus difficile du programme</h4>
+      <p>Le mécanisme est réel. L8 a retourné p = 0,0005 — la confirmation d'alpha de timing la plus forte de tout le programme de recherche. L'acteur forcé est identifiable, la contrainte est contraignante, et les preuves statistiques sont écrasantes. Mais l'événement ne survient qu'environ 17 fois par an, produisant N = 170 sur 10 ans de données. Le Domaine B exige N ≥ 300. La stratégie a été éliminée par insuffisance d'échantillon, pas par absence d'avantage.</p>
+      <h4>Pourquoi nous n'avons pas assoupli la règle</h4>
+      <p>Nous avons tenté un pooling cross-paires (tester le même mécanisme sur des paires corrélées pour augmenter N). La corrélation entre les paires était ρ = 0,82, signifiant que la taille effective d'échantillon indépendant augmentait à peine. Agréger des observations corrélées gonfle la puissance statistique apparente sans ajouter d'information réelle. Le plancher N existe précisément pour empêcher cela.</p>
+      <div class="case-finding">
+        <p><strong>Conclusion de recherche :</strong> Un mécanisme confirmé n'est pas la même chose qu'un avantage exploitable. Le plancher N est la contrainte déterminante pour le FX événementiel à résolution minute — une limitation structurelle des données, pas une erreur de calibration du cadre. Le pooling cross-paires ne résout pas le problème quand les paires sont corrélées.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAS 3 : Élimination par les coûts -->
+  <div class="case-study">
+    <div class="case-header">
+      <div class="case-meta">
+        <div class="case-id">Étude de cas 03 · Domaine B · Crypto</div>
+        <div class="case-name">Contagion en cascade à résolution horaire</div>
+        <div class="case-asset">Altcoin perpétuel · Barres 1 heure · 2020–2026</div>
+      </div>
+      <div class="verdict-badge verdict-kill">KILLED — Cost</div>
+    </div>
+
+    <table class="gate-mini">
+      <tr><th>Couche</th><th>Test</th><th>Statistique</th><th>Verdict</th></tr>
+      <tr><td>L1</td><td>Permutation directionnelle</td><td>p = 0,042</td><td class="v-pass">PASS</td></tr>
+      <tr class="kill-row"><td>L4</td><td>Absorption des coûts (16 bps RT)</td><td>−2,4 bps net</td><td class="v-kill">KILL</td></tr>
+      <tr><td>L8</td><td>Alpha de timing</td><td>p = 0,030</td><td class="v-pass">PASS</td></tr>
+    </table>
+
+    <div class="case-analysis">
+      <h4>Hypothèse</h4>
+      <p>Quand une cryptomonnaie à forte capitalisation chute brutalement, les moteurs de liquidation des exchanges vendent de force les positions corrélées en altcoins. Cela crée une surréaction temporaire qui se résorbe avec le retour de la liquidité organique. Le signal capture la réversion sur un altcoin mid-cap à résolution horaire.</p>
+      <h4>Ce qui s'est passé</h4>
+      <p>Le mécanisme est confirmé — l'alpha de timing L8 est significatif à p = 0,030. Mais l'avantage brut de +13,6 bps par trade ne survit pas aux 16 bps de coûts de transaction aller-retour (spread + commission + impact). Le rendement net est négatif. L'avantage existe mais n'est pas exploitable à cette résolution et cette structure de coûts.</p>
+      <div class="case-finding">
+        <p><strong>Conclusion de recherche :</strong> Le même mécanisme testé à résolution plus fine (barres de 15 minutes) avec des spreads plus serrés a survécu à l'absorption des coûts et passé la validation complète. La résolution et la structure de coûts déterminent si un mécanisme confirmé se traduit en un avantage exploitable. Le cadre teste les deux indépendamment.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <hr class="h-rule">

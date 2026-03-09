@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="fr" href="approach-fr.html">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
+  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); --pass: #1b7340; --pass-bg: #e8f5e9; --kill: #c42838; --kill-bg: #fdecea; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
@@ -104,6 +104,39 @@
 
 
 
+  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .stat-item { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 1.5rem 1.25rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .stat-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
+  .stat-value { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--ink); }
+  .stat-label { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.5rem; line-height: 1.6; }
+
+  .case-study { margin-top: 3rem; padding: 2.5rem; border: 1px solid var(--rule); }
+  .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
+  .case-meta { display: flex; flex-direction: column; gap: 0.25rem; }
+  .case-id { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-faint); }
+  .case-name { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.4rem; font-weight: 500; color: var(--ink); }
+  .case-asset { font-size: 0.82rem; color: var(--text-dim); font-weight: 300; }
+  .verdict-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 2px; }
+  .verdict-kill { background: var(--kill-bg); color: var(--kill); border-top: 2px solid var(--kill); }
+  .verdict-pass { background: var(--pass-bg); color: var(--pass); border-top: 2px solid var(--pass); }
+
+  .gate-mini { margin: 1.5rem 0; width: 100%; border-collapse: collapse; }
+  .gate-mini th { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-align: left; padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--ink); }
+  .gate-mini th:nth-child(3), .gate-mini th:nth-child(4) { text-align: right; }
+  .gate-mini td { font-size: 0.82rem; font-weight: 300; color: var(--text-dim); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--rule); }
+  .gate-mini td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--text); }
+  .gate-mini td:nth-child(3), .gate-mini td:nth-child(4) { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-align: right; }
+  .gate-mini .v-pass { color: var(--pass); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-align: center; }
+  .gate-mini .v-kill { color: var(--kill); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-align: center; }
+  .gate-mini tr:nth-child(even) td { background: rgba(44,48,64,0.02); }
+  .gate-mini tr.kill-row td { background: var(--kill-bg); }
+
+  .case-analysis { margin-top: 1.5rem; }
+  .case-analysis h4 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .case-analysis p { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); margin-bottom: 1rem; }
+  .case-finding { margin-top: 1.25rem; padding: 1.25rem; border-left: 3px solid var(--bordeaux); background: var(--bg-warm); }
+  .case-finding p { font-size: 0.85rem; font-weight: 400; color: var(--ink); line-height: 1.8; margin: 0; }
+
   @media (max-width: 860px) {
     h1 { font-size: 2.5rem !important; }
     h2 { font-size: 2rem; }
@@ -111,6 +144,8 @@
     .two-gates { grid-template-columns: 1fr; }
     .deliverable-grid { grid-template-columns: 1fr; }
     .deliverable-block { padding: 2.5rem; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .case-header { flex-direction: column; gap: 1rem; }
     .bottom-actions { flex-direction: column; gap: 0.75rem; }
     .bottom-email, .bottom-cta { font-size: 1.2rem; }
     .nav-links { display: none; }
@@ -166,6 +201,17 @@
 </div>
 <hr class="h-rule">
 
+<!-- ═══ STATS BAR ═══ -->
+<div class="section">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-value">10</div><div class="stat-label">Synthetic test cases<br>covering all 8 layers</div></div>
+    <div class="stat-item"><div class="stat-value">100%</div><div class="stat-label">Detection rate on<br>planted confounds</div></div>
+    <div class="stat-item"><div class="stat-value">0.17</div><div class="stat-label">Expected false positives<br>per 1,576 null strategies</div></div>
+    <div class="stat-item"><div class="stat-value">10<sup style="font-size:0.5em">−11</sup></div><div class="stat-label">P(≥ 8 survivors)<br>under the null hypothesis</div></div>
+  </div>
+</div>
+<hr class="h-rule">
+
 <div class="section">
   <div class="section-num">The deliverable</div>
   <h2>A verdict, not an opinion</h2>
@@ -181,6 +227,115 @@
     </div>
   </div>
   <a href="services.html" class="subtle-link">View engagement options</a>
+</div>
+<hr class="h-rule">
+
+<!-- ═══ CASE STUDIES ═══ -->
+<div class="section">
+  <div class="section-num">From the kill log</div>
+  <h2>Why strategies fail</h2>
+  <p class="section-lead">Anonymized case studies from our internal research. Each illustrates a different failure mode that the framework is designed to catch — and that standard backtesting misses.</p>
+
+  <!-- CASE 1: Beta confound -->
+  <div class="case-study">
+    <div class="case-header">
+      <div class="case-meta">
+        <div class="case-id">Case study 01 · Domain A · Equities</div>
+        <div class="case-name">Month-End Rebalancing Flow</div>
+        <div class="case-asset">US equities & bonds · Daily resolution · 2005–2026</div>
+      </div>
+      <div class="verdict-badge verdict-kill">KILLED — L8</div>
+    </div>
+
+    <table class="gate-mini">
+      <tr><th>Layer</th><th>Test</th><th>Statistic</th><th>Verdict</th></tr>
+      <tr><td>L1</td><td>Direction shuffle</td><td>p = 0.048</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L2</td><td>Bootstrap CI</td><td>CI excludes 0</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L3</td><td>Sharpe floor</td><td>0.52</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L4</td><td>Cost absorption</td><td>+18.4 bps net</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L5</td><td>Walk-forward</td><td>3/5 positive</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L6</td><td>Bonferroni</td><td>p = 0.048</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L7</td><td>N floor</td><td>N = 174</td><td class="v-pass">PASS</td></tr>
+      <tr class="kill-row"><td>L8</td><td>Timing alpha — regime-conditional</td><td>p = 0.991</td><td class="v-kill">KILL</td></tr>
+    </table>
+
+    <div class="case-analysis">
+      <h4>Hypothesis</h4>
+      <p>Month-end portfolio rebalancing by index funds and pension managers creates predictable flow in equity/bond pairs. The signal captures the rebalancing window and fades the expected flow direction.</p>
+      <h4>What the standard backtest showed</h4>
+      <p>Positive mean return of +23.6 bps per trade, Sharpe of 0.52, and a statistically significant direction shuffle (p = 0.048). Six of the first seven layers passed. By any conventional backtest standard, this looked like a viable strategy.</p>
+      <h4>What L8 revealed</h4>
+      <p>The L8 timing shuffle compares the strategy's entries against regime-conditional random entries on the same asset. The result: p = 0.991 — meaning random entries at the same frequency produced <em>better</em> returns than the signal. The entire apparent edge was explained by directional exposure to the underlying asset, not by the rebalancing mechanism. The signal was an expensive way to be long in an uptrend.</p>
+      <div class="case-finding">
+        <p><strong>Research finding:</strong> Rebalancing flow at month-end is continuation, not reversion. The signal was anti-signal — fading flow that was informationally correct. This closed the daily-frequency rebalancing frontier across all tested asset pairs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 2: Mechanism confirmed, N-killed -->
+  <div class="case-study">
+    <div class="case-header">
+      <div class="case-meta">
+        <div class="case-id">Case study 02 · Domain B · FX</div>
+        <div class="case-name">Macro Announcement Overshoot Reversion</div>
+        <div class="case-asset">Major FX pair · 1-minute resolution · 2014–2026</div>
+      </div>
+      <div class="verdict-badge verdict-kill">KILLED — L7</div>
+    </div>
+
+    <table class="gate-mini">
+      <tr><th>Layer</th><th>Test</th><th>Statistic</th><th>Verdict</th></tr>
+      <tr><td>L1</td><td>Direction shuffle</td><td>p = 0.001</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L2</td><td>Bootstrap CI</td><td>CI excludes 0</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L3</td><td>Sharpe floor</td><td>0.71</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L4</td><td>Cost absorption</td><td>+9.2 bps net</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L5</td><td>Walk-forward</td><td>4/5 positive</td><td class="v-pass">PASS</td></tr>
+      <tr><td>L6</td><td>Bonferroni</td><td>p = 0.009</td><td class="v-pass">PASS</td></tr>
+      <tr class="kill-row"><td>L7</td><td>N floor (Domain B = 300)</td><td>N = 170</td><td class="v-kill">KILL</td></tr>
+      <tr><td>L8</td><td>Timing alpha</td><td>p = 0.0005</td><td class="v-pass">PASS</td></tr>
+    </table>
+
+    <div class="case-analysis">
+      <h4>Hypothesis</h4>
+      <p>Algorithmic reaction to major macroeconomic releases creates a temporary overshoot in the first 30 seconds. Real-money flow normalizes the price over the following 5–35 minutes. The signal captures this reversion.</p>
+      <h4>Why this is the hardest kill in the program</h4>
+      <p>The mechanism is real. L8 returned p = 0.0005 — the strongest timing alpha confirmation in the entire research program. The forced actor is identifiable, the constraint is binding, and the statistical evidence is overwhelming. But the event occurs only ~17 times per year, producing N = 170 over 10 years of data. Domain B requires N ≥ 300. The strategy was killed by sample sufficiency, not by lack of edge.</p>
+      <h4>Why we didn't bend the rule</h4>
+      <p>We attempted cross-pair pooling (testing the same mechanism on correlated pairs to increase N). The correlation between pairs was ρ = 0.82, meaning the effective independent sample size barely increased. Pooling correlated observations inflates apparent statistical power without adding real information. The N floor exists precisely to prevent this.</p>
+      <div class="case-finding">
+        <p><strong>Research finding:</strong> A confirmed mechanism is not the same as a tradeable edge. The N floor is the binding constraint for event-driven FX at minute resolution — a structural limitation of the data, not a framework calibration error. Cross-pair pooling does not solve the problem when pairs are correlated.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 3: Cost kill -->
+  <div class="case-study">
+    <div class="case-header">
+      <div class="case-meta">
+        <div class="case-id">Case study 03 · Domain B · Crypto</div>
+        <div class="case-name">Cascade Spillover at Hourly Resolution</div>
+        <div class="case-asset">Altcoin perpetual · 1-hour bars · 2020–2026</div>
+      </div>
+      <div class="verdict-badge verdict-kill">KILLED — Cost</div>
+    </div>
+
+    <table class="gate-mini">
+      <tr><th>Layer</th><th>Test</th><th>Statistic</th><th>Verdict</th></tr>
+      <tr><td>L1</td><td>Direction shuffle</td><td>p = 0.042</td><td class="v-pass">PASS</td></tr>
+      <tr class="kill-row"><td>L4</td><td>Cost absorption (16 bps RT)</td><td>−2.4 bps net</td><td class="v-kill">KILL</td></tr>
+      <tr><td>L8</td><td>Timing alpha</td><td>p = 0.030</td><td class="v-pass">PASS</td></tr>
+    </table>
+
+    <div class="case-analysis">
+      <h4>Hypothesis</h4>
+      <p>When a large-cap cryptocurrency drops sharply, exchange liquidation engines force-sell correlated altcoin positions. This creates a temporary overshoot that reverts as organic liquidity returns. The signal captures the reversion on a mid-cap altcoin at hourly resolution.</p>
+      <h4>What happened</h4>
+      <p>The mechanism is confirmed — L8 timing alpha is significant at p = 0.030. But the gross edge of +13.6 bps per trade cannot survive 16 bps in round-trip transaction costs (spread + commission + impact). Net return is negative. The edge exists but is not tradeable at this resolution and cost structure.</p>
+      <div class="case-finding">
+        <p><strong>Research finding:</strong> The same mechanism tested at higher resolution (15-minute bars) with tighter spreads survived cost absorption and passed full validation. Resolution and cost structure determine whether a confirmed mechanism translates into a tradeable edge. The framework tests both independently.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <hr class="h-rule">
