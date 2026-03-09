@@ -6,22 +6,33 @@
 <title>Services — Veritas Quant</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.6); --text-faint: rgba(44,48,64,0.3); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
+  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
   ::selection { background: var(--bordeaux); color: var(--bg); }
-  nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(247,244,239,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--rule); }
-  .nav-inner { max-width: 1080px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--rule); }
+  .nav-inner { padding: 1.25rem clamp(1.5rem, 3vw, 4rem); display: flex; justify-content: space-between; align-items: center; }
   .logo { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
-  .logo-wordmark { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; }
+  .logo svg { position: relative; top: 4px; }
+  .logo-wordmark { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-  .nav-links a { text-decoration: none; font-size: 0.8rem; font-weight: 400; color: var(--text-dim); letter-spacing: 0.02em; transition: color 0.25s; }
+  .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 400; color: var(--text-dim); letter-spacing: 0.02em; transition: color 0.25s; position: relative; padding-bottom: 4px; }
+  .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--bordeaux); transition: width 0.3s ease; }
   .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover::after { width: 100%; }
   .nav-links a.active { color: var(--ink); }
-  .nav-contact { color: var(--ink) !important; font-weight: 500; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
-  .h-rule { max-width: 1080px; margin: 0 auto; border: none; border-top: 1px solid var(--rule); }
-  footer { max-width: 1080px; margin: 0 auto; padding: 3rem 2rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
+  .nav-links a.active::after { width: 100%; }
+  .nav-links:hover a.active::after { width: 0; }
+  .nav-links a.active:hover::after { width: 100%; }
+  .nav-contact { color: var(--ink) !important; font-weight: 500; }
+  .lang-switch { display: flex; align-items: center; gap: 0.3rem; margin-left: 0.5rem; position: relative; top: 4px; }
+  .lang-switch a { font-size: 0.8rem; font-weight: 400; text-decoration: none; color: var(--text-faint); letter-spacing: 0.02em; transition: color 0.25s; }
+  .lang-switch a:hover { color: var(--ink); }
+  .lang-switch a.lang-active { color: var(--ink); font-weight: 500; }
+  .lang-sep { font-size: 0.75rem; color: var(--text-faint); }
+  .h-rule { max-width: 1320px; margin: 0 auto; border: none; border-top: 1px solid var(--rule); }
+  footer { padding: 3rem clamp(1.5rem, 3vw, 4rem); border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
   .footer-left { display: flex; align-items: center; gap: 0.6rem; }
   .footer-text { font-size: 0.72rem; color: var(--text-faint); }
   .footer-links { display: flex; gap: 2rem; }
@@ -29,50 +40,67 @@
   .footer-links a:hover { color: var(--ink); }
   @keyframes softIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
-  .page-hero { padding: 10rem 2rem 4rem; max-width: 1080px; margin: 0 auto; }
-  .page-hero h1 { font-family: 'EB Garamond', serif; font-size: 3rem; font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
-  .page-hero p { font-size: 1rem; font-weight: 300; color: var(--text-dim); line-height: 1.9; max-width: 560px; animation: softIn 0.8s ease-out 0.25s both; }
+  .page-hero { padding: 8rem clamp(1.5rem, 3vw, 4rem) 4rem; max-width: none; margin: 0 auto; position: relative; background: url('image.PNG') center/cover no-repeat; background-attachment: fixed; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(247,244,239,0.85); }
+  .page-hero h1, .page-hero p { position: relative; z-index: 1; max-width: 1320px; }
+  .page-hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
+  .page-hero p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.9; max-width: 560px; animation: softIn 0.8s ease-out 0.25s both; }
   .page-hero p strong { color: var(--ink); font-weight: 500; }
 
-  .mode-section { max-width: 1080px; margin: 0 auto; padding: 5rem 2rem 3rem; }
-  .mode-header { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; margin-bottom: 2.5rem; }
-  .mode-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bordeaux); }
-  .mode-name { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-top: 0.4rem; }
-  .mode-desc { font-size: 0.9rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; }
-  .engagements { display: flex; flex-direction: column; }
-  .engagement { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; padding: 2.5rem 0; border-bottom: 1px solid var(--rule); }
-  .engagement:last-child { border-bottom: none; }
-  .eng-name { font-family: 'EB Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--ink); }
-  .eng-scope { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.35rem; }
-  .eng-includes { margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--text-faint); letter-spacing: 0.02em; line-height: 2; }
-  .eng-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); }
+  /* Section 1 — Mode cards */
+  .modes-section { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem) 3rem; }
+  .modes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .mode-card { padding: 2.5rem; border: 1px solid var(--ink); display: flex; flex-direction: column; }
+  .mode-card-label { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1rem; }
+  .mode-card-name { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; }
+  .mode-card-desc { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; flex: 1; }
+  .mode-card-requires { margin-top: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-faint); letter-spacing: 0.02em; line-height: 1.8; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
 
-  .process-section { max-width: 1080px; margin: 0 auto; padding: 5rem 2rem; }
-  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; }
-  h2 { font-family: 'EB Garamond', serif; font-size: 2.5rem; font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 520px; }
-  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
-  .step-num { font-family: 'EB Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--text-ghost); margin-bottom: 0.75rem; }
-  .step-title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
-  .step-text { font-size: 0.78rem; font-weight: 300; color: var(--text-dim); line-height: 1.8; }
+  /* Section 2 — Engagement cards */
+  .engagements-section { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem) 3rem; }
+  .section-num { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; }
+  h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 520px; }
+  .engagements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .eng-card { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 2rem 1.75rem; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .eng-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
+  .eng-card-tag { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 0.75rem; }
+  .eng-card-name { font-family: 'EB Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--ink); margin-bottom: 0.35rem; }
+  .eng-card-scope { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.03em; margin-bottom: 1rem; }
+  .eng-card-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--text-dim); flex: 1; }
+  .eng-card-includes { margin-top: 1.25rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 300; color: var(--text); letter-spacing: 0.02em; line-height: 2; border-top: 1px solid var(--rule); padding-top: 1rem; }
 
-  .bottom-contact { max-width: 1080px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+  /* Section 3 — Process cards */
+  .process-section { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem); }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .process-card { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 2rem 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .process-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
+  .process-card-num { font-family: 'EB Garamond', serif; font-size: 2.8rem; font-weight: 400; color: var(--bordeaux); line-height: 1; margin-bottom: 0.75rem; }
+  .process-card-title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .process-card-text { font-size: 0.78rem; font-weight: 300; color: var(--text-dim); line-height: 1.8; }
+
+  /* Section 4 — Bottom contact */
+  .bottom-contact { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1.5rem, 3vw, 4rem); text-align: center; }
   .bottom-contact p { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; max-width: 460px; margin: 0 auto 2rem; }
   .bottom-email { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
   .bottom-email:hover { border-color: var(--ink); }
+  .bottom-actions { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
+  .bottom-or { font-size: 0.78rem; color: var(--text-faint); letter-spacing: 0.05em; }
+  .bottom-cta { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
+  .bottom-cta:hover { border-color: var(--ink); }
 
   @media (max-width: 860px) {
     h1 { font-size: 2.5rem !important; }
     h2 { font-size: 2rem; }
-    .mode-header { grid-template-columns: 1fr; gap: 1rem; }
-    .engagement { grid-template-columns: 1fr; gap: 1rem; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
+    .modes-grid { grid-template-columns: 1fr; }
+    .engagements-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
   }
 </style>
 </head>
 <body>
 
-<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html">Approach</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li></ul></div></nav>
+<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html">Approach</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li><li class="lang-switch"><a href="#" class="lang-active">EN</a><span class="lang-sep">|</span><a href="#">FR</a></li></ul></div></nav>
 
 <div class="page-hero">
   <h1>Two modes, three depths</h1>
@@ -80,39 +108,98 @@
 </div>
 <hr class="h-rule">
 
-<div class="mode-section">
-  <div class="mode-header"><div><div class="mode-label">Mode A</div><div class="mode-name">Performance Audit</div></div><div class="mode-desc">You provide a trade history — entry/exit timestamps, instrument, direction, and prices. We validate the statistical properties of your results through our proprietary framework. No code required.</div></div>
-  <div class="engagements">
-    <div class="engagement"><div><div class="eng-name">Diagnostic</div><div class="eng-scope">Statistical screen · 5–7 business days</div><div class="eng-includes">Significance testing · Cost stress · Sample sufficiency · Walk-forward · Confound detection · Structured report</div></div><div class="eng-desc">Core statistical validation applied to your trade record. Tests for significance, cost survival, sample sufficiency, out-of-sample persistence, and directional confounds. Delivers a structured report with binary verdicts per test layer and interpretive commentary.</div></div>
-    <div class="engagement"><div><div class="eng-name">Full Validation</div><div class="eng-scope">Complete framework · 10–15 business days</div><div class="eng-includes">All diagnostic layers · Market microstructure · Regime analysis · Decay diagnostics · DD report · Research debrief</div></div><div class="eng-desc">The complete proprietary validation framework. Includes real market microstructure analysis, regime robustness across multiple environments, decay diagnostics, and an institutional-grade due diligence report suitable for capital allocation decisions. Includes a debrief with the research team.</div></div>
+<!-- Section 1 — Mode A / Mode B cards -->
+<div class="modes-section">
+  <div class="modes-grid">
+    <div class="mode-card">
+      <div class="mode-card-label">Mode A</div>
+      <div class="mode-card-name">Performance Audit</div>
+      <div class="mode-card-desc">You provide a trade history — entry/exit timestamps, instrument, direction, and prices. We validate the statistical properties of your results through our proprietary framework. No code required.</div>
+      <div class="mode-card-requires">Requires → trade history (CSV / API export)</div>
+    </div>
+    <div class="mode-card">
+      <div class="mode-card-label">Mode B</div>
+      <div class="mode-card-name">Full Audit</div>
+      <div class="mode-card-desc">You provide your trade history and signal source code (or detailed pseudocode). In addition to statistical validation, we review the implementation for look-ahead bias, signal construction errors, and data handling issues that silently inflate backtest performance.</div>
+      <div class="mode-card-requires">Requires → trade history + source code or pseudocode</div>
+    </div>
   </div>
 </div>
 <hr class="h-rule">
 
-<div class="mode-section">
-  <div class="mode-header"><div><div class="mode-label">Mode B</div><div class="mode-name">Full Audit</div></div><div class="mode-desc">You provide your trade history and signal source code (or detailed pseudocode). In addition to statistical validation, we review the implementation for look-ahead bias, signal construction errors, and data handling issues that silently inflate backtest performance.</div></div>
-  <div class="engagements">
-    <div class="engagement"><div><div class="eng-name">Full Validation + Code Review</div><div class="eng-scope">Framework + implementation audit · 2–3 weeks</div><div class="eng-includes">All full validation layers · Code review · Signal reconstruction · Look-ahead detection · Cost verification</div></div><div class="eng-desc">Everything in the performance audit full validation, plus line-by-line review of signal logic. We reconstruct the signal independently to verify reproducibility, test for look-ahead contamination, and validate cost assumptions against real market data.</div></div>
-    <div class="engagement"><div><div class="eng-name">Multi-Strategy Audit</div><div class="eng-scope">Full book · 3–5 strategies · 4–6 weeks</div><div class="eng-includes">Full validation + code on each strategy · Cross-strategy correlation · Portfolio risk · Sizing recommendations · Investor DD document</div></div><div class="eng-desc">Full validation and code review applied across an entire strategy book. Cross-strategy correlation analysis, portfolio-level risk decomposition, and sizing recommendations. Produces an investor-facing due diligence document for funds preparing to allocate or raise capital.</div></div>
+<!-- Section 2 — Engagement cards -->
+<div class="engagements-section">
+  <div class="section-num">Engagements</div>
+  <h2>Four levels of depth</h2>
+  <div class="engagements-grid">
+    <div class="eng-card">
+      <div class="eng-card-tag">Mode A</div>
+      <div class="eng-card-name">Diagnostic</div>
+      <div class="eng-card-scope">Statistical screen · 5–7 business days</div>
+      <div class="eng-card-desc">Core statistical validation applied to your trade record. Tests for significance, cost survival, sample sufficiency, out-of-sample persistence, and directional confounds. Delivers a structured report with binary verdicts per test layer and interpretive commentary.</div>
+      <div class="eng-card-includes">Significance testing · Cost stress · Sample sufficiency · Walk-forward · Confound detection · Structured report</div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-card-tag">Mode A</div>
+      <div class="eng-card-name">Full Validation</div>
+      <div class="eng-card-scope">Complete framework · 10–15 business days</div>
+      <div class="eng-card-desc">The complete proprietary validation framework. Includes real market microstructure analysis, regime robustness across multiple environments, decay diagnostics, and an institutional-grade due diligence report suitable for capital allocation decisions. Includes a debrief with the research team.</div>
+      <div class="eng-card-includes">All diagnostic layers · Market microstructure · Regime analysis · Decay diagnostics · DD report · Research debrief</div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-card-tag">Mode B</div>
+      <div class="eng-card-name">Full Validation + Code Review</div>
+      <div class="eng-card-scope">Framework + implementation audit · 2–3 weeks</div>
+      <div class="eng-card-desc">Everything in the performance audit full validation, plus line-by-line review of signal logic. We reconstruct the signal independently to verify reproducibility, test for look-ahead contamination, and validate cost assumptions against real market data.</div>
+      <div class="eng-card-includes">All full validation layers · Code review · Signal reconstruction · Look-ahead detection · Cost verification</div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-card-tag">Mode B</div>
+      <div class="eng-card-name">Multi-Strategy Audit</div>
+      <div class="eng-card-scope">Full book · 3–5 strategies · 4–6 weeks</div>
+      <div class="eng-card-desc">Full validation and code review applied across an entire strategy book. Cross-strategy correlation analysis, portfolio-level risk decomposition, and sizing recommendations. Produces an investor-facing due diligence document for funds preparing to allocate or raise capital.</div>
+      <div class="eng-card-includes">Full validation + code on each strategy · Cross-strategy correlation · Portfolio risk · Sizing recommendations · Investor DD document</div>
+    </div>
   </div>
 </div>
 <hr class="h-rule">
 
+<!-- Section 3 — Process cards -->
 <div class="process-section">
   <div class="section-num">How it works</div>
   <h2>From submission to verdict</h2>
-  <div class="process-steps">
-    <div><div class="step-num">1</div><div class="step-title">Submit</div><div class="step-text">Describe your strategy and send your trade history. We assess scope and data feasibility.</div></div>
-    <div><div class="step-num">2</div><div class="step-title">Proposal</div><div class="step-text">Within 48 hours, you receive a fixed-price proposal with the recommended engagement mode and timeline.</div></div>
-    <div><div class="step-num">3</div><div class="step-title">Validation</div><div class="step-text">We run your strategy through the proprietary framework. Every layer produces a binary verdict backed by evidence.</div></div>
-    <div><div class="step-num">4</div><div class="step-title">Report</div><div class="step-text">You receive a structured report with verdicts, risk diagnostics, and — for full engagements — a live debrief.</div></div>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-card-num">1</div>
+      <div class="process-card-title">Submit</div>
+      <div class="process-card-text">Describe your strategy and send your trade history. We assess scope and data feasibility.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-card-num">2</div>
+      <div class="process-card-title">Proposal</div>
+      <div class="process-card-text">Within 48 hours, you receive a fixed-price proposal with the recommended engagement mode and timeline.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-card-num">3</div>
+      <div class="process-card-title">Validation</div>
+      <div class="process-card-text">We run your strategy through the proprietary framework. Every layer produces a binary verdict backed by evidence.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-card-num">4</div>
+      <div class="process-card-title">Report</div>
+      <div class="process-card-text">You receive a structured report with verdicts, risk diagnostics, and — for full engagements — a live debrief.</div>
+    </div>
   </div>
 </div>
 
 <hr class="h-rule">
 <div class="bottom-contact">
   <p>Describe your strategy and the scope of validation you require. We return a proposal within 48 hours.</p>
-  <a href="mailto:contact@veritasquant.com" class="bottom-email">contact@veritasquant.com</a>
+  <div class="bottom-actions">
+    <a href="mailto:contact@veritasquant.com" class="bottom-email">contact@veritasquant.com</a>
+    <span class="bottom-or">or</span>
+    <a href="contact.html" class="bottom-cta">contact us</a>
+  </div>
 </div>
 
 <footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
