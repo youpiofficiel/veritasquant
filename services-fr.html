@@ -9,12 +9,12 @@
 <link rel="alternate" hreflang="fr" href="services-fr.html">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
+  :root { --bg: #faf9f7; --bg-warm: #f5f4f1; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
   ::selection { background: var(--bordeaux); color: var(--bg); }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--rule); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,247,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--rule); }
   .nav-inner { padding: 1.25rem clamp(1.5rem, 3vw, 4rem); display: flex; justify-content: space-between; align-items: center; }
   .logo { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
   .logo svg { position: relative; top: 3px; }
@@ -44,7 +44,7 @@
   @keyframes softIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
   .page-hero { padding: 8rem clamp(1.5rem, 3vw, 4rem) 4rem; max-width: none; margin: 0 auto; position: relative; background: url('monet.png') center/cover no-repeat; background-attachment: fixed; }
-  .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(247,244,239,0.60); }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(254,253,251,0.60); }
   .page-hero h1, .page-hero p { position: relative; z-index: 1; max-width: 1320px; }
   .page-hero h1 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
   .page-hero p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.9; max-width: 560px; animation: softIn 0.8s ease-out 0.25s both; }
