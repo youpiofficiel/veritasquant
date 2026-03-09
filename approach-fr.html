@@ -55,6 +55,7 @@
 
   .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
   .approach-item { padding-bottom: 2.5rem; }
+  .approach-icon { display: block; margin-bottom: 1rem; color: var(--bordeaux); }
   .approach-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.25rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
   .approach-text { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); }
 
@@ -73,6 +74,7 @@
   .deliverable-block h3 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.7rem; font-weight: 400; color: var(--bg); margin-bottom: 0.75rem; }
   .deliverable-block > p { font-size: 0.9rem; font-weight: 300; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 560px; margin-bottom: 3rem; }
   .deliverable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .deliv-num { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 400; color: rgba(247,244,239,0.3); letter-spacing: 0.05em; margin-bottom: 0.5rem; }
   .deliv-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.1rem; font-weight: 500; color: var(--bg); margin-bottom: 0.5rem; }
   .deliv-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: rgba(247,244,239,0.5); }
 
@@ -178,10 +180,10 @@
 <div class="section">
   <div class="section-num">Ce que nous testons</div>
   <div class="approach-grid">
-    <div class="approach-item"><div class="approach-title">Détection de confusion bêta</div><div class="approach-text">Nous testons si votre signal capture un véritable alpha de timing ou bénéficie simplement d'une exposition directionnelle à un actif en tendance. Cette seule classe de tests a éliminé des stratégies affichant des ratios de Sharpe supérieurs à 1,5 dans notre recherche interne.</div></div>
-    <div class="approach-item"><div class="approach-title">Inférence statistique rigoureuse</div><div class="approach-text">Les rendements financiers sont autocorrélés. Les tests de significativité standards produisent des résultats trompeurs. Nous utilisons des méthodes bootstrap avancées qui préservent la structure de dépendance de vos données, produisant des p-values fiables là où les méthodes naïves échouent.</div></div>
-    <div class="approach-item"><div class="approach-title">Modélisation réaliste des coûts</div><div class="approach-text">Les stratégies sont soumises à des stress tests à des multiples des coûts de transaction estimés — incluant spread, commission et impact de marché. Les avantages qui disparaissent sous des hypothèses de coûts conservatrices sont identifiés et signalés avant qu'ils ne consomment du capital.</div></div>
-    <div class="approach-item"><div class="approach-title">Robustesse aux régimes</div><div class="approach-text">Nous exigeons que les stratégies démontrent une persistance à travers des environnements de marché distincts — y compris les périodes de crise et les régimes de faible volatilité. Un signal qui ne fonctionne que dans des conditions favorables n'est pas un signal.</div></div>
+    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><div class="approach-title">Détection de confusion bêta</div><div class="approach-text">Nous testons si votre signal capture un véritable alpha de timing ou bénéficie simplement d'une exposition directionnelle à un actif en tendance. Cette seule classe de tests a éliminé des stratégies affichant des ratios de Sharpe supérieurs à 1,5 dans notre recherche interne.</div></div>
+    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 C6 20 8 4 12 4 C16 4 18 20 22 20"/><line x1="2" y1="20" x2="22" y2="20"/></svg><div class="approach-title">Inférence statistique rigoureuse</div><div class="approach-text">Les rendements financiers sont autocorrélés. Les tests de significativité standards produisent des résultats trompeurs. Nous utilisons des méthodes bootstrap avancées qui préservent la structure de dépendance de vos données, produisant des p-values fiables là où les méthodes naïves échouent.</div></div>
+    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><path d="M5 12 L12 6 L19 12 L12 18 Z"/></svg><div class="approach-title">Modélisation réaliste des coûts</div><div class="approach-text">Les stratégies sont soumises à des stress tests à des multiples des coûts de transaction estimés — incluant spread, commission et impact de marché. Les avantages qui disparaissent sous des hypothèses de coûts conservatrices sont identifiés et signalés avant qu'ils ne consomment du capital.</div></div>
+    <div class="approach-item"><svg class="approach-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L4 9 V15 C4 18 8 21 12 22 C16 21 20 18 20 15 V9 Z"/></svg><div class="approach-title">Robustesse aux régimes</div><div class="approach-text">Nous exigeons que les stratégies démontrent une persistance à travers des environnements de marché distincts — y compris les périodes de crise et les régimes de faible volatilité. Un signal qui ne fonctionne que dans des conditions favorables n'est pas un signal.</div></div>
   </div>
 </div>
 <hr class="h-rule">
@@ -221,10 +223,10 @@
     <h3>Ce que vous recevez</h3>
     <p>Un document complet conçu pour servir d'artefact de due diligence indépendant — pour vos propres décisions d'allocation de capital, ou à présenter à des investisseurs et allocateurs.</p>
     <div class="deliverable-grid">
-      <div><div class="deliv-title">Synthèse de validation</div><div class="deliv-desc">Un résumé exécutif d'une page avec un verdict global — avancer, rejeter ou conditionnel — appuyé par les métriques clés ayant déterminé le résultat.</div></div>
-      <div><div class="deliv-title">Résultats couche par couche</div><div class="deliv-desc">Chaque couche de validation rapporte un résultat binaire pass/fail avec la statistique de test sous-jacente, le niveau de confiance et une interprétation en langage clair.</div></div>
-      <div><div class="deliv-title">Diagnostics de risque</div><div class="deliv-desc">Profil de drawdown, sensibilité aux régimes, sensibilité aux coûts et corrélation aux facteurs de risque courants. Un portrait complet de où et comment la stratégie pourrait échouer.</div></div>
-      <div><div class="deliv-title">Débrief</div><div class="deliv-desc">Pour les validations complètes et les engagements multi-stratégies, une session en direct avec l'équipe de recherche pour parcourir les résultats et discuter des implications de déploiement.</div></div>
+      <div><div class="deliv-num">01</div><div class="deliv-title">Synthèse de validation</div><div class="deliv-desc">Un résumé exécutif d'une page avec un verdict global — avancer, rejeter ou conditionnel — appuyé par les métriques clés ayant déterminé le résultat.</div></div>
+      <div><div class="deliv-num">02</div><div class="deliv-title">Résultats couche par couche</div><div class="deliv-desc">Chaque couche de validation rapporte un résultat binaire pass/fail avec la statistique de test sous-jacente, le niveau de confiance et une interprétation en langage clair.</div></div>
+      <div><div class="deliv-num">03</div><div class="deliv-title">Diagnostics de risque</div><div class="deliv-desc">Profil de drawdown, sensibilité aux régimes, sensibilité aux coûts et corrélation aux facteurs de risque courants. Un portrait complet de où et comment la stratégie pourrait échouer.</div></div>
+      <div><div class="deliv-num">04</div><div class="deliv-title">Débrief</div><div class="deliv-desc">Pour les validations complètes et les engagements multi-stratégies, une session en direct avec l'équipe de recherche pour parcourir les résultats et discuter des implications de déploiement.</div></div>
     </div>
   </div>
   <a href="services-fr.html" class="subtle-link">Voir les options d'engagement</a>
