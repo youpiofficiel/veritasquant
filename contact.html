@@ -32,7 +32,7 @@
   .lang-switch a.lang-active { color: var(--ink); font-weight: 500; }
   .lang-sep { font-size: 0.75rem; color: var(--text-faint); }
   .h-rule { max-width: 1320px; margin: 0 auto; border: none; border-top: 1px solid var(--rule); }
-  footer { padding: 3rem clamp(1.5rem, 3vw, 4rem); border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
+  footer { padding: 1.25rem clamp(1.5rem, 3vw, 4rem); border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
   .footer-left { display: flex; align-items: center; gap: 0.6rem; }
   .footer-text { font-size: 0.72rem; color: var(--text-faint); }
   .footer-links { display: flex; gap: 2rem; }
@@ -41,7 +41,7 @@
   @keyframes softIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
   .page-hero { padding: 8rem clamp(1.5rem, 3vw, 4rem) 3rem; max-width: none; margin: 0 auto; position: relative; background: url('image.PNG') center/cover no-repeat; background-attachment: fixed; }
-  .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(247,244,239,0.85); }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(247,244,239,0.78); }
   .page-hero h1, .page-hero p { position: relative; z-index: 1; max-width: 1320px; }
   .page-hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
   .page-hero p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.9; max-width: 520px; animation: softIn 0.8s ease-out 0.25s both; }
