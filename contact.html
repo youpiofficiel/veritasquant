@@ -12,13 +12,13 @@
   :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
   ::selection { background: var(--bordeaux); color: var(--bg); }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--rule); }
   .nav-inner { padding: 1.25rem clamp(1.5rem, 3vw, 4rem); display: flex; justify-content: space-between; align-items: center; }
   .logo { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
   .logo svg { position: relative; top: 3px; }
-  .logo-wordmark { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; }
+  .logo-wordmark { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
   .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 400; color: var(--text-dim); letter-spacing: 0.02em; transition: color 0.25s; position: relative; padding-bottom: 4px; }
   .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--bordeaux); transition: width 0.3s ease; }
@@ -46,7 +46,7 @@
   .page-hero { padding: 8rem clamp(1.5rem, 3vw, 4rem) 3rem; max-width: none; margin: 0 auto; position: relative; background: url('image.PNG') center/cover no-repeat; background-attachment: fixed; }
   .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(247,244,239,0.78); }
   .page-hero h1, .page-hero p { position: relative; z-index: 1; max-width: 1320px; }
-  .page-hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
+  .page-hero h1 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
   .page-hero p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.9; max-width: 520px; animation: softIn 0.8s ease-out 0.25s both; }
 
   .contact-layout { max-width: 1320px; margin: 0 auto; padding: 3rem clamp(1.5rem, 3vw, 4rem) 6rem; display: grid; grid-template-columns: 1fr 340px; gap: 5rem; }
@@ -57,7 +57,7 @@
   .form-input, .form-select, .form-textarea {
     width: 100%; padding: 0.85rem 1rem;
     border: 1px solid var(--rule); background: var(--bg);
-    font-family: 'Inter', sans-serif; font-size: 0.88rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.88rem;
     color: var(--ink); transition: border-color 0.25s; border-radius: 0;
   }
   .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--ink); }
@@ -71,13 +71,13 @@
   .form-submit {
     display: inline-block; background: var(--ink); color: var(--bg);
     padding: 0.85rem 2.5rem; border: 1px solid var(--ink); border-radius: 0;
-    font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 400;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.85rem; font-weight: 400;
     cursor: pointer; transition: all 0.25s; letter-spacing: 0.02em;
   }
   .form-submit:hover { background: transparent; color: var(--ink); }
 
   .sidebar-block { margin-bottom: 3rem; }
-  .sidebar-title { font-family: 'EB Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; }
+  .sidebar-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.15rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; }
   .prepare-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
   .prepare-list li { font-size: 0.82rem; font-weight: 300; color: var(--text-dim); line-height: 1.7; padding-left: 1.2rem; position: relative; }
   .prepare-list li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 4px; height: 4px; border-radius: 50%; background: var(--text-faint); }
@@ -85,21 +85,48 @@
   .sidebar-reassurance p { font-size: 0.78rem; font-weight: 300; color: var(--text-dim); line-height: 1.8; }
   .sidebar-reassurance p + p { margin-top: 0.75rem; }
   .email-alt { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
-  .email-alt-label { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.5rem; }
-  .email-alt a { font-family: 'EB Garamond', serif; font-size: 1.15rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); transition: border-color 0.25s; }
+  .email-alt-label { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.5rem; }
+  .email-alt a { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.15rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); transition: border-color 0.25s; }
   .email-alt a:hover { border-color: var(--ink); }
+  *:focus-visible { outline: 2px solid var(--bordeaux); outline-offset: 2px; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 4px 0; transition: 0.3s; }
+  .nav-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 2rem clamp(1.5rem, 3vw, 4rem); flex-direction: column; gap: 1.5rem; border-top: 1px solid var(--rule); }
+  .nav-mobile a { text-decoration: none; font-size: 1rem; color: var(--text-dim); transition: color 0.25s; }
+  .nav-mobile a:hover { color: var(--ink); }
+  .nav-mobile a.active { color: var(--ink); font-weight: 500; }
+  .nav-mobile .lang-switch { display: flex; align-items: center; gap: 0.3rem; margin-top: 1rem; }
+  .nav-mobile .lang-switch a { font-size: 0.8rem; color: var(--text-faint); }
+  .nav-mobile .lang-switch a.lang-active { color: var(--ink); font-weight: 500; }
+  .nav-mobile .lang-sep { font-size: 0.75rem; color: var(--text-faint); }
+  body.nav-open .nav-mobile { display: flex; }
+  body.nav-open { overflow: hidden; }
+
+
 
   @media (max-width: 860px) {
     h1 { font-size: 2.5rem !important; }
     .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
     .form-row { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+    .nav-toggle { display: flex; flex-direction: column; }
   }
 </style>
 </head>
 <body>
 
-<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html">Approach</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact active">Contact</a></li><li class="lang-switch"><a href="contact.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="contact-fr.html">FR</a></li></ul></div></nav>
+<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html">Approach</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact active">Contact</a></li><li class="lang-switch"><a href="contact.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="contact-fr.html">FR</a></li></ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="approach.html">Approach</a>
+  <a href="services.html">Services</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html" class="active">Contact</a>
+  <div class="lang-switch"><a href="contact.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="contact-fr.html">FR</a></div>
+</div>
 
 <div class="page-hero">
   <h1>Get in touch</h1>
@@ -144,7 +171,7 @@
   </div>
 </div>
 
-<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
+<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
 <script>
 (function() {
   var msgs = {
@@ -165,6 +192,14 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   if (f.role.value) body += '\nRole: ' + f.role.value;
   if (f.message.value) body += '\n\n' + f.message.value;
   window.location.href = 'mailto:contact@veritasquant.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  document.body.classList.toggle('nav-open');
+});
+document.querySelectorAll('.nav-mobile a').forEach(function(a) {
+  a.addEventListener('click', function() { document.body.classList.remove('nav-open'); });
 });
 </script>
 </body>

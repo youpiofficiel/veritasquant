@@ -12,13 +12,13 @@
   :root { --bg: #f7f4ef; --bg-warm: #f0ece4; --ink: #1a1a2e; --text: #2c3040; --text-dim: rgba(44,48,64,0.75); --text-faint: rgba(44,48,64,0.5); --text-ghost: rgba(44,48,64,0.1); --bordeaux: #c42838; --bleu: #4870d0; --gris: #484858; --rule: rgba(44,48,64,0.1); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
   ::selection { background: var(--bordeaux); color: var(--bg); }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,244,239,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--rule); }
   .nav-inner { padding: 1.25rem clamp(1.5rem, 3vw, 4rem); display: flex; justify-content: space-between; align-items: center; }
   .logo { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
   .logo svg { position: relative; top: 3px; }
-  .logo-wordmark { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; }
+  .logo-wordmark { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
   .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 400; color: var(--text-dim); letter-spacing: 0.02em; transition: color 0.25s; position: relative; padding-bottom: 4px; }
   .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--bordeaux); transition: width 0.3s ease; }
@@ -36,8 +36,8 @@
   .lang-sep { font-size: 0.75rem; color: var(--text-faint); }
   .h-rule { max-width: 1320px; margin: 0 auto; border: none; border-top: 1px solid var(--rule); }
   .section { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1.5rem, 3vw, 4rem) 2rem; }
-  .section-num { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; }
-  h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 520px; }
+  .section-num { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; }
+  h2 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 520px; }
   .section-lead { font-size: 0.95rem; font-weight: 300; color: var(--text-dim); line-height: 1.9; max-width: 520px; margin-top: 1.5rem; }
   footer { padding: 1.25rem clamp(1.5rem, 3vw, 4rem); border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
   .footer-left { display: flex; align-items: center; gap: 0.6rem; }
@@ -50,44 +50,59 @@
   .page-hero { padding: 8rem clamp(1.5rem, 3vw, 4rem) 4rem; max-width: none; margin: 0 auto; position: relative; background: url('image.PNG') center/cover no-repeat; background-attachment: fixed; }
   .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(247,244,239,0.78); }
   .page-hero h1, .page-hero p { position: relative; z-index: 1; max-width: 1320px; }
-  .page-hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
+  .page-hero h1 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 1.5rem; animation: softIn 0.8s ease-out 0.1s both; }
   .page-hero p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.9; max-width: 560px; animation: softIn 0.8s ease-out 0.25s both; }
 
   .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
   .approach-item { padding-bottom: 2.5rem; }
-  .approach-title { font-family: 'EB Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
+  .approach-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.25rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
   .approach-text { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--text-dim); }
 
   .two-gates { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem) 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
   .gate { padding: 2.5rem; border: 1px solid var(--ink); }
-  .gate-label { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1rem; }
-  .gate h3 { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
+  .gate-label { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1rem; }
+  .gate h3 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.4rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
   .gate p { font-size: 0.85rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; }
   .gate-stat { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .gate-stat-item { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 1.5rem 1rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .gate-stat-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,48,64,0.07); }
-  .gate-stat-value { font-family: 'EB Garamond', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--ink); line-height: 1.1; }
+  .gate-stat-value { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--ink); line-height: 1.1; }
   .gate-stat-label { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.03em; margin-top: 0.5rem; line-height: 1.6; }
 
   .deliverable-block { background: var(--ink); padding: 4rem; }
-  .deliverable-block h3 { font-family: 'EB Garamond', serif; font-size: 1.7rem; font-weight: 400; color: var(--bg); margin-bottom: 0.75rem; }
+  .deliverable-block h3 { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.7rem; font-weight: 400; color: var(--bg); margin-bottom: 0.75rem; }
   .deliverable-block > p { font-size: 0.9rem; font-weight: 300; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 560px; margin-bottom: 3rem; }
   .deliverable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-  .deliv-title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--bg); margin-bottom: 0.5rem; }
+  .deliv-title { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.1rem; font-weight: 500; color: var(--bg); margin-bottom: 0.5rem; }
   .deliv-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: rgba(247,244,239,0.5); }
 
   .bottom-contact { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1.5rem, 3vw, 4rem); text-align: center; }
   .bottom-contact p { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; max-width: 460px; margin: 0 auto 2rem; }
-  .bottom-email { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
+  .bottom-email { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
   .bottom-email:hover { border-color: var(--ink); }
   .bottom-actions { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
   .bottom-or { font-size: 0.78rem; color: var(--text-faint); letter-spacing: 0.05em; }
-  .bottom-cta { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
+  .bottom-cta { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
   .bottom-cta:hover { border-color: var(--ink); }
 
   .subtle-link { display: inline-block; margin-top: 1.5rem; font-size: 0.78rem; font-weight: 400; color: var(--text-faint); text-decoration: none; transition: color 0.25s; }
   .subtle-link:hover { color: var(--ink); }
   .subtle-link::after { content: ' →'; }
+  *:focus-visible { outline: 2px solid var(--bordeaux); outline-offset: 2px; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 4px 0; transition: 0.3s; }
+  .nav-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 2rem clamp(1.5rem, 3vw, 4rem); flex-direction: column; gap: 1.5rem; border-top: 1px solid var(--rule); }
+  .nav-mobile a { text-decoration: none; font-size: 1rem; color: var(--text-dim); transition: color 0.25s; }
+  .nav-mobile a:hover { color: var(--ink); }
+  .nav-mobile a.active { color: var(--ink); font-weight: 500; }
+  .nav-mobile .lang-switch { display: flex; align-items: center; gap: 0.3rem; margin-top: 1rem; }
+  .nav-mobile .lang-switch a { font-size: 0.8rem; color: var(--text-faint); }
+  .nav-mobile .lang-switch a.lang-active { color: var(--ink); font-weight: 500; }
+  .nav-mobile .lang-sep { font-size: 0.75rem; color: var(--text-faint); }
+  body.nav-open .nav-mobile { display: flex; }
+  body.nav-open { overflow: hidden; }
+
+
 
   @media (max-width: 860px) {
     h1 { font-size: 2.5rem !important; }
@@ -97,12 +112,24 @@
     .deliverable-grid { grid-template-columns: 1fr; }
     .deliverable-block { padding: 2.5rem; }
     .nav-links { display: none; }
+    .nav-toggle { display: flex; flex-direction: column; }
   }
 </style>
 </head>
 <body>
 
-<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html" class="active">Approach</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li><li class="lang-switch"><a href="approach.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="approach-fr.html">FR</a></li></ul></div></nav>
+<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html" class="active">Approach</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li><li class="lang-switch"><a href="approach.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="approach-fr.html">FR</a></li></ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="approach.html" class="active">Approach</a>
+  <a href="services.html">Services</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
+  <div class="lang-switch"><a href="approach.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="approach-fr.html">FR</a></div>
+</div>
 
 <div class="page-hero">
   <h1>We look for reasons to<br>reject your strategy</h1>
@@ -164,6 +191,14 @@
   </div>
 </div>
 
-<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
+<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none" aria-label="Veritas Quant"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  document.body.classList.toggle('nav-open');
+});
+document.querySelectorAll('.nav-mobile a').forEach(function(a) {
+  a.addEventListener('click', function() { document.body.classList.remove('nav-open'); });
+});
+</script>
 </body>
 </html>
