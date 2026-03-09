@@ -1,12 +1,15 @@
 # Veritas Quant — Site vitrine
 
 ## Structure
-- `index.html` — Landing page (hero full-screen, datum cards, data band)
-- `approach.html` — Méthodologie (Gate 1/Gate 2 cards, deliverables dark block)
-- `services.html` — Services (Mode A/B cards, 4 engagement cards 2×2, process cards)
-- `team.html` — Équipe (3 membres, confidentiality block)
-- `contact.html` — Formulaire de contact
+- `index.html` — Landing page EN (hero full-screen, datum cards, data band)
+- `approach.html` — Méthodologie EN (Gate 1/Gate 2 cards, deliverables dark block)
+- `services.html` — Services EN (Mode A/B cards, 4 engagement cards 2×2, process cards)
+- `team.html` — Équipe EN (3 membres, confidentiality block)
+- `contact.html` — Formulaire de contact EN
+- `index-fr.html`, `approach-fr.html`, `services-fr.html`, `team-fr.html`, `contact-fr.html` — Pages FR (même structure, contenu traduit)
 - `image.PNG` — Image de fond hero
+- Balises `hreflang` EN↔FR sur toutes les pages
+- Nav FR : Accueil, Approche, Services, Équipe, Contact
 
 ## Stack
 - HTML/CSS pur, pas de JS, pas de build

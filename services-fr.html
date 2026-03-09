@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +49,6 @@
   .page-hero p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.9; max-width: 560px; animation: softIn 0.8s ease-out 0.25s both; }
   .page-hero p strong { color: var(--ink); font-weight: 500; }
 
-  /* Section 1 — Mode cards */
   .modes-section { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem) 3rem; }
   .modes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
   .mode-card { padding: 2.5rem; border: 1px solid var(--ink); display: flex; flex-direction: column; }
@@ -58,7 +57,6 @@
   .mode-card-desc { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; flex: 1; }
   .mode-card-requires { margin-top: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-faint); letter-spacing: 0.02em; line-height: 1.8; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
 
-  /* Section 2 — Engagement cards */
   .engagements-section { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem) 3rem; }
   .section-num { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; }
   h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--ink); line-height: 1.2; max-width: 520px; }
@@ -75,7 +73,6 @@
   .eng-card-cta::after { content: ' →'; }
   .eng-card:hover .eng-card-cta { color: var(--ink); }
 
-  /* Section 3 — Process cards */
   .process-section { max-width: 1320px; margin: 0 auto; padding: 5rem clamp(1.5rem, 3vw, 4rem); }
   .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
   .process-card { background: var(--bg-warm); border: 1px solid var(--rule); border-top: 2px solid var(--bordeaux); padding: 2rem 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -84,7 +81,6 @@
   .process-card-title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
   .process-card-text { font-size: 0.78rem; font-weight: 300; color: var(--text-dim); line-height: 1.8; }
 
-  /* Section 4 — Bottom contact */
   .bottom-contact { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1.5rem, 3vw, 4rem); text-align: center; }
   .bottom-contact p { font-size: 0.88rem; font-weight: 300; color: var(--text-dim); line-height: 1.85; max-width: 460px; margin: 0 auto 2rem; }
   .bottom-email { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--text-faint); padding-bottom: 3px; transition: border-color 0.3s; }
@@ -106,11 +102,11 @@
 </head>
 <body>
 
-<nav><div class="nav-inner"><a href="index.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="approach.html">Approach</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-contact">Contact</a></li><li class="lang-switch"><a href="services.html" class="lang-active">EN</a><span class="lang-sep">|</span><a href="services-fr.html">FR</a></li></ul></div></nav>
+<nav><div class="nav-inner"><a href="index-fr.html" class="logo"><svg width="28" height="26" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="logo-wordmark">Veritas Quant</span></a><ul class="nav-links"><li><a href="index-fr.html">Accueil</a></li><li><a href="approach-fr.html">Approche</a></li><li><a href="services-fr.html" class="active">Services</a></li><li><a href="team-fr.html">Équipe</a></li><li><a href="contact-fr.html" class="nav-contact">Contact</a></li><li class="lang-switch"><a href="services.html">EN</a><span class="lang-sep">|</span><a href="services-fr.html" class="lang-active">FR</a></li></ul></div></nav>
 
 <div class="page-hero">
-  <h1>Two modes, three depths</h1>
-  <p>We offer two engagement modes. <strong>Performance audit</strong> operates on your historical trade record alone. <strong>Full audit</strong> adds a review of your signal logic and source code, verifying implementation integrity alongside statistical validity.</p>
+  <h1>Deux modes, trois niveaux de profondeur</h1>
+  <p>Nous proposons deux modes d'engagement. L'<strong>audit de performance</strong> opère uniquement sur votre historique de trades. L'<strong>audit complet</strong> ajoute une revue de votre logique de signal et de votre code source, vérifiant l'intégrité de l'implémentation en plus de la validité statistique.</p>
 </div>
 <hr class="h-rule">
 
@@ -119,15 +115,15 @@
   <div class="modes-grid">
     <div class="mode-card">
       <div class="mode-card-label">Mode A</div>
-      <div class="mode-card-name">Performance Audit</div>
-      <div class="mode-card-desc">You provide a trade history — entry/exit timestamps, instrument, direction, and prices. We validate the statistical properties of your results through our proprietary framework. No code required.</div>
-      <div class="mode-card-requires">Requires → trade history (CSV / API export)</div>
+      <div class="mode-card-name">Audit de performance</div>
+      <div class="mode-card-desc">Vous fournissez un historique de trades : horodatages d'entrée/sortie, instrument, direction et prix. Nous validons les propriétés statistiques de vos résultats à travers notre cadre propriétaire. Aucun code requis.</div>
+      <div class="mode-card-requires">Requis → historique de trades (CSV / export API)</div>
     </div>
     <div class="mode-card">
       <div class="mode-card-label">Mode B</div>
-      <div class="mode-card-name">Full Audit</div>
-      <div class="mode-card-desc">You provide your trade history and signal source code (or detailed pseudocode). In addition to statistical validation, we review the implementation for look-ahead bias, signal construction errors, and data handling issues that silently inflate backtest performance.</div>
-      <div class="mode-card-requires">Requires → trade history + source code or pseudocode</div>
+      <div class="mode-card-name">Audit complet</div>
+      <div class="mode-card-desc">Vous fournissez votre historique de trades et le code source du signal (ou un pseudocode détaillé). En plus de la validation statistique, nous auditons l'implémentation pour détecter le biais d'anticipation, les erreurs de construction du signal et les problèmes de traitement des données qui gonflent silencieusement les performances de backtest.</div>
+      <div class="mode-card-requires">Requis → historique de trades + code source ou pseudocode</div>
     </div>
   </div>
 </div>
@@ -136,39 +132,39 @@
 <!-- Section 2 — Engagement cards -->
 <div class="engagements-section">
   <div class="section-num">Engagements</div>
-  <h2>Four levels of depth</h2>
+  <h2>Quatre niveaux de profondeur</h2>
   <div class="engagements-grid">
-    <a href="contact.html?engagement=diagnostic" class="eng-card">
+    <a href="contact-fr.html?engagement=diagnostic" class="eng-card">
       <div class="eng-card-tag">Mode A</div>
       <div class="eng-card-name">Diagnostic</div>
-      <div class="eng-card-scope">Statistical screen · 5–7 business days</div>
-      <div class="eng-card-desc">Core statistical validation applied to your trade record. Tests for significance, cost survival, sample sufficiency, out-of-sample persistence, and directional confounds. Delivers a structured report with binary verdicts per test layer and interpretive commentary.</div>
-      <div class="eng-card-includes">Significance testing · Cost stress · Sample sufficiency · Walk-forward · Confound detection · Structured report</div>
-      <div class="eng-card-cta">Request a quote</div>
+      <div class="eng-card-scope">Filtre statistique · 5–7 jours ouvrés</div>
+      <div class="eng-card-desc">Validation statistique fondamentale appliquée à votre historique de trades. Tests de significativité, survie aux coûts, suffisance d'échantillon, persistance hors échantillon et confusion directionnelle. Livraison d'un rapport structuré avec des verdicts binaires par couche de test et un commentaire interprétatif.</div>
+      <div class="eng-card-includes">Test de significativité · Stress coûts · Suffisance d'échantillon · Walk-forward · Détection de confusion · Rapport structuré</div>
+      <div class="eng-card-cta">Demander un devis</div>
     </a>
-    <a href="contact.html?engagement=full-validation" class="eng-card">
+    <a href="contact-fr.html?engagement=full-validation" class="eng-card">
       <div class="eng-card-tag">Mode A</div>
-      <div class="eng-card-name">Full Validation</div>
-      <div class="eng-card-scope">Complete framework · 10–15 business days</div>
-      <div class="eng-card-desc">The complete proprietary validation framework. Includes real market microstructure analysis, regime robustness across multiple environments, decay diagnostics, and an institutional-grade due diligence report suitable for capital allocation decisions. Includes a debrief with the research team.</div>
-      <div class="eng-card-includes">All diagnostic layers · Market microstructure · Regime analysis · Decay diagnostics · DD report · Research debrief</div>
-      <div class="eng-card-cta">Request a quote</div>
+      <div class="eng-card-name">Validation complète</div>
+      <div class="eng-card-scope">Cadre complet · 10–15 jours ouvrés</div>
+      <div class="eng-card-desc">Le cadre de validation propriétaire complet. Inclut l'analyse réelle de microstructure de marché, la robustesse aux régimes dans plusieurs environnements, les diagnostics de décroissance et un rapport de due diligence de grade institutionnel adapté aux décisions d'allocation de capital. Inclut un débrief avec l'équipe de recherche.</div>
+      <div class="eng-card-includes">Toutes les couches diagnostic · Microstructure de marché · Analyse de régime · Diagnostics de décroissance · Rapport DD · Débrief recherche</div>
+      <div class="eng-card-cta">Demander un devis</div>
     </a>
-    <a href="contact.html?engagement=full-validation-code-review" class="eng-card">
+    <a href="contact-fr.html?engagement=full-validation-code-review" class="eng-card">
       <div class="eng-card-tag">Mode B</div>
-      <div class="eng-card-name">Full Validation + Code Review</div>
-      <div class="eng-card-scope">Framework + implementation audit · 2–3 weeks</div>
-      <div class="eng-card-desc">Everything in the performance audit full validation, plus line-by-line review of signal logic. We reconstruct the signal independently to verify reproducibility, test for look-ahead contamination, and validate cost assumptions against real market data.</div>
-      <div class="eng-card-includes">All full validation layers · Code review · Signal reconstruction · Look-ahead detection · Cost verification</div>
-      <div class="eng-card-cta">Request a quote</div>
+      <div class="eng-card-name">Validation complète + revue de code</div>
+      <div class="eng-card-scope">Cadre + audit d'implémentation · 2–3 semaines</div>
+      <div class="eng-card-desc">Tout ce qui est inclus dans la validation complète de l'audit de performance, plus une revue ligne par ligne de la logique du signal. Nous reconstruisons le signal indépendamment pour vérifier la reproductibilité, tester la contamination par anticipation et valider les hypothèses de coûts contre des données de marché réelles.</div>
+      <div class="eng-card-includes">Toutes les couches de validation complète · Revue de code · Reconstruction du signal · Détection d'anticipation · Vérification des coûts</div>
+      <div class="eng-card-cta">Demander un devis</div>
     </a>
-    <a href="contact.html?engagement=multi-strategy" class="eng-card">
+    <a href="contact-fr.html?engagement=multi-strategy" class="eng-card">
       <div class="eng-card-tag">Mode B</div>
-      <div class="eng-card-name">Multi-Strategy Audit</div>
-      <div class="eng-card-scope">Full book · 3–5 strategies · 4–6 weeks</div>
-      <div class="eng-card-desc">Full validation and code review applied across an entire strategy book. Cross-strategy correlation analysis, portfolio-level risk decomposition, and sizing recommendations. Produces an investor-facing due diligence document for funds preparing to allocate or raise capital.</div>
-      <div class="eng-card-includes">Full validation + code on each strategy · Cross-strategy correlation · Portfolio risk · Sizing recommendations · Investor DD document</div>
-      <div class="eng-card-cta">Request a quote</div>
+      <div class="eng-card-name">Audit multi-stratégies</div>
+      <div class="eng-card-scope">Book complet · 3–5 stratégies · 4–6 semaines</div>
+      <div class="eng-card-desc">Validation complète et revue de code appliquées à l'ensemble d'un book de stratégies. Analyse de corrélation inter-stratégies, décomposition du risque au niveau portefeuille et recommandations de sizing. Produit un document de due diligence destiné aux investisseurs pour les fonds préparant une allocation ou une levée de capital.</div>
+      <div class="eng-card-includes">Validation complète + code sur chaque stratégie · Corrélation inter-stratégies · Risque portefeuille · Recommandations de sizing · Document DD investisseur</div>
+      <div class="eng-card-cta">Demander un devis</div>
     </a>
   </div>
 </div>
@@ -176,42 +172,42 @@
 
 <!-- Section 3 — Process cards -->
 <div class="process-section">
-  <div class="section-num">How it works</div>
-  <h2>From submission to verdict</h2>
+  <div class="section-num">Comment ça fonctionne</div>
+  <h2>De la soumission au verdict</h2>
   <div class="process-grid">
     <div class="process-card">
       <div class="process-card-num">1</div>
-      <div class="process-card-title">Submit</div>
-      <div class="process-card-text">Describe your strategy and send your trade history. We assess scope and data feasibility.</div>
+      <div class="process-card-title">Soumission</div>
+      <div class="process-card-text">Décrivez votre stratégie et envoyez votre historique de trades. Nous évaluons le périmètre et la faisabilité des données.</div>
     </div>
     <div class="process-card">
       <div class="process-card-num">2</div>
-      <div class="process-card-title">Proposal</div>
-      <div class="process-card-text">Within 48 hours, you receive a fixed-price proposal with the recommended engagement mode and timeline.</div>
+      <div class="process-card-title">Proposition</div>
+      <div class="process-card-text">Sous 48 heures, vous recevez une proposition à prix fixe avec le mode d'engagement recommandé et le calendrier.</div>
     </div>
     <div class="process-card">
       <div class="process-card-num">3</div>
       <div class="process-card-title">Validation</div>
-      <div class="process-card-text">We run your strategy through the proprietary framework. Every layer produces a binary verdict backed by evidence.</div>
+      <div class="process-card-text">Nous passons votre stratégie à travers le cadre propriétaire. Chaque couche produit un verdict binaire étayé par des preuves.</div>
     </div>
     <div class="process-card">
       <div class="process-card-num">4</div>
-      <div class="process-card-title">Report</div>
-      <div class="process-card-text">You receive a structured report with verdicts, risk diagnostics, and — for full engagements — a live debrief.</div>
+      <div class="process-card-title">Rapport</div>
+      <div class="process-card-text">Vous recevez un rapport structuré avec les verdicts, les diagnostics de risque et — pour les engagements complets — un débrief en direct.</div>
     </div>
   </div>
 </div>
 
 <hr class="h-rule">
 <div class="bottom-contact">
-  <p>Describe your strategy and the scope of validation you require. We return a proposal within 48 hours.</p>
+  <p>Décrivez votre stratégie et le périmètre de validation souhaité. Nous renvoyons une proposition sous 48 heures.</p>
   <div class="bottom-actions">
     <a href="mailto:contact@veritasquant.com" class="bottom-email">contact@veritasquant.com</a>
-    <span class="bottom-or">or</span>
-    <a href="contact.html" class="bottom-cta">contact us</a>
+    <span class="bottom-or">ou</span>
+    <a href="contact-fr.html" class="bottom-cta">nous contacter</a>
   </div>
 </div>
 
-<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach.html">Approach</a><a href="services.html">Services</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div></footer>
+<footer><div class="footer-left"><svg width="18" height="17" viewBox="0 0 52 48" fill="none"><rect x="0" y="4" width="30" height="30" rx="6" fill="#c42838"/><rect x="14" y="0" width="24" height="24" rx="5" fill="#4870d0"/><rect x="26" y="16" width="20" height="20" rx="4" fill="#484858"/></svg><span class="footer-text">© 2026 Veritas Quant</span></div><div class="footer-links"><a href="approach-fr.html">Approche</a><a href="services-fr.html">Services</a><a href="team-fr.html">Équipe</a><a href="contact-fr.html">Contact</a></div></footer>
 </body>
 </html>
